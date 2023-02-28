@@ -37,8 +37,6 @@ plt.show()
 ![](./images/Figure_1.png)
 
 
-$$ (E=mc^2)，x_{1,2} = \frac{-b \sqrt{b^2-4ac}}{2b}. $$
-
 <br/>
 <br/>
 

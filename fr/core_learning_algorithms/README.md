@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/lastest-2023--02--28-success)
+
 ## Algorithmes d'apprentissage fondamentaux
 Dans cette note, nous allons parcourir 4 algorithmes fondamentaux d'apprentissage automatique. Nous appliquerons chacun de ces algorithmes à des problèmes et des ensembles de données uniques avant de mettre en évidence les cas d'utilisation de chacun.<br/>
 
@@ -17,7 +19,7 @@ Avant de nous plonger dans le vif du sujet, je vais te donner une explication tr
 
 La régression linéaire suit un concept très simple. Si les points de données sont liés de façon linéaire, alors nous pouvons générer une ligne (droite) de meilleur ajustement pour ces points et l'utiliser pour prédire les futures valeurs.<br/>
 
-Prenons l'exemple d'un ensemble de données (dataset) avec une caractéristique (variable) et une étiquette (sortie). C'est à dire **y = f(x)**.
+Prenons l'exemple d'un ensemble de données (dataset) avec une caractéristique (variable) et une étiquette (sortie). C'est à dire $y = f(x)$.
 
 ```python
 import numpy as np
@@ -36,6 +38,30 @@ plt.show()
 
 ![](./images/Figure_1.png)
 
+Nous pouvons voir que ces données ont une tendance linéaire. Lorsque la valeur `x` augmente, la valeur `y` augmente également. Grâce à cette variation, nous pouvons établir une **ligne (droite)** de meilleur ajustement pour cet ensemble de données. Dans cet exemple, notre droite n'utilisera qu'une seule variable d'entrée, car nous travaillons dans le plan. Dans un ensemble de données plus grand avec plus de caractéristiques, notre droite aura plus de variables.
+
+>"La droite de meilleur ajustement fait référence à une droite qui traverse un nuage de points de données et exprime une meilleur relation entre ces points."
+> [Vas sur ce lien.](https://www.investopedia.com/terms/l/line-of-best-fit.asp)
+
+Voici un rappel de l'équation d'une droite dans le plan.
+
+$$ y = ax + b $$
+
+Voici un exemple de droite de meilleur ajustement pour le graphe ci-dessus.
+
+```python
+plt.plot(X, Y, 'ro')
+plt.axis([0, 6, 0, 20])
+
+un_x = np.unique(X)
+poly1d = np.poly1d(np.polyfit(X, Y, 1))
+
+plt.plot(un_x, poly1d(un_x))
+plt.show()
+
+```
+
+![](./images/Figure_2.png)
 
 <br/>
 <br/>

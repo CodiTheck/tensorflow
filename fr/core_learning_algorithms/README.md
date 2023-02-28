@@ -1,7 +1,7 @@
-![](https://img.shields.io/badge/lastest-2023--02--28-success)
+![](https://img.shields.io/badge/lastest-2023--02--28-success) (En cour de rédaction...)
 
 ## Algorithmes d'apprentissage fondamentaux
-Dans cette note, nous allons parcourir 4 algorithmes fondamentaux d'apprentissage automatique. Nous appliquerons chacun de ces algorithmes à des problèmes et des ensembles de données uniques avant de mettre en évidence les cas d'utilisation de chacun.<br/>
+Dans cette note de cour, nous allons parcourir 4 algorithmes fondamentaux d'apprentissage automatique. Nous appliquerons chacun de ces algorithmes à des problèmes et des ensembles de données uniques avant de mettre en évidence les cas d'utilisation de chacun.<br/>
 
 Les algorithmes sur lesquels nous allons nous concentrer sont les suivants:
 - Régression linéaire;
@@ -45,7 +45,137 @@ import tensorflow as tf
 ```
 
 ### Les données
-Donc, si tu ne le sais pas encore, les données constituent une partie importante de l'apprentissage automatique !
+Donc, si tu ne le sais pas encore, les données constituent une partie importante de l'apprentissage automatique ! En fait, c'est tellement important que la plupart des activités de ce cours porteront sur l'exploration, le nettoyage et la sélection des données appropriées.<br/>
+
+Le jeu de données (dataset) sur lequel nous allons travailler est celui du Titanic. Il contient des tonnes d'informations sur chaque passager du navire. Notre première étape sera d'explorer les données afin de les comprendre. C'est donc ce que nous allons faire ! <br/>
+
+Ci-dessous, nous allons charger le jeu de données et apprendre comment l'explorer à l'aide de certains outils intégrés.
+
+```python
+# Load dataset:
+# On va charger les données pour l'entrainement des modèles:
+df_train = pd.read_csv("https://storage.googleapis.com/tf-datasets/titanic/train.csv")
+
+# On va charger les données pour l'évaluation des modèles après leur entrainements:
+df_eval = pd.read_csv("https://storage.googleapis.com/tf-datasets/titanic/eval.csv")
+
+y_train = df_train.pop("survived")
+y_eval = df_eval.pop("survived")
+
+```
+
+La fonction `pd.read_csv()` nous renvoie un nouvelle instance de `DataFrame` de pandas. Vous pouvez considérer un *dataframe* comme un tableau.<br/>
+
+Avec la fonction `pop()`, on a extrait la colonne `"survived"` de notre dataset pour la stocker dans une nouvelle variable (`y_train` et `y_eval`). Cette colonne nous indique simplement si la personne a survécu ou non.<br/>
+
+Pour afficher les données, nous allons utiliser la méthode `head()` de l'instance `DataFrame`. Cela nous affichera les 5 premiers éléments de notre dataframe.
+
+```python
+head = df_train.head()
+print(head)
+
+```
+
+```
+      sex   age  n_siblings_spouses  parch     fare  class     deck  embark_town alone
+0    male  22.0                   1      0   7.2500  Third  unknown  Southampton     n
+1  female  38.0                   1      0  71.2833  First        C    Cherbourg     n
+2  female  26.0                   0      0   7.9250  Third  unknown  Southampton     y
+3  female  35.0                   1      0  53.1000  First        C  Southampton     n
+4    male  28.0                   0      0   8.4583  Third  unknown   Queenstown     y
+```
+
+Si nous voulons une analyse statistique de nos données, nous pouvons utiliser la méthode `describe()`.
+
+```python
+desc = df_train.describe()
+print(desc)
+
+```
+
+```
+              age  n_siblings_spouses       parch        fare
+count  627.000000          627.000000  627.000000  627.000000
+mean    29.631308            0.545455    0.379585   34.385399
+std     12.511818            1.151090    0.792999   54.597730
+min      0.750000            0.000000    0.000000    0.000000
+25%     23.000000            0.000000    0.000000    7.895800
+50%     28.000000            0.000000    0.000000   15.045800
+75%     35.000000            1.000000    0.000000   31.387500
+max     80.000000            8.000000    5.000000  512.329200
+```
+
+Et puisque nous avions eu à étudier les dimensions, dans la session précédente, voyons cela aussi ici !
+
+```python
+sh = df_train.shape
+print(sh)  # Ce qui affiche: (627, 9)
+
+```
+
+Donc, on a 627 éléments et 9 caractéristiques (variables) observées sur chacun de ces éléments. <br/>
+
+Concernant la colonne des informations sur les survivants, on a:
+
+```python
+print(y_train.head())
+
+```
+
+```
+0    0
+1    1
+2    1
+3    1
+4    0
+Name: survived, dtype: int64
+```
+
+Note que chaque entrée est soit un 0, soit un 1. Tu peux déjà laquelle représente la survie !<br/>
+Etant donné que les images sont toujours beaucoup plus parlant, nous allons générer quelques graphiques issues de ces données.
+
+```python
+df_train.age.hist(bins=20)
+plt.show()
+
+```
+
+![](./images/Figure_3.png)
+
+```python
+df_train.sex.value_counts().plot(kind='barh')
+plt.show()
+
+```
+
+![](./images/Figure_4.png)
+
+```python
+df_train['class'].value_counts().plot(kind='barh')
+plt.show()
+
+```
+
+![](./images/Figure_5.png)
+
+```python
+pd.concat([df_train, y_train], axis=1).groupby('sex')\
+        .survived.mean()\
+        .plot(kind='barh')\
+        .set_xlabel('% survive')
+
+plt.show()
+
+```
+
+![](./images/Figure_6.png)
+
+Après avoir analysé ces informations, on note ce qui suit:
+- La majorité des passagers ont entre 20 et 30 ans.
+- La majorité des passagers sont mal
+- La majorité des passagers sont en "troisième" classe
+- Les femmes ont beaucoup plus de chances de survie.
+
 
 ### Régression linéaire
 La régression linéaire est l'une des formes les plus fondamentales de l'apprentissage automatique et est utilisée pour prédire des valeurs numériques. Dans ce cours, nous allons utiliser un modèle linéaire pour prédire le taux de survie des passagers à partir de l'ensemble de données du Titanic.

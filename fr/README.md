@@ -17,7 +17,7 @@ L'exécution de différentes parties du graphe permet de générer des résultat
 
 Chaque tenseur a un type de données et une dimension (`shape`).
 - Les types données peuvent être: `float32`, `int32`, `string` et autres types.
-- `shape` représente les dimentions des données contenu dans le tenseur.
+- `shape` représente les dimentions des données contenues dans le tenseur.
 
 ### Création d'un tenseur
 Vous trouverez ci-dessous un exemple de création de différents tenseurs.
@@ -82,7 +82,7 @@ Maintenant, jetons un coup d'oeil à nos différents tenseurs.
 ```python
 print(f"{tensor1 = }\n")
 print(f"{tensor2 = }\n")
-print(f"{tensor2 = }\n")
+print(f"{tensor3 = }\n")
 
 # Remarque les changements de dimension.
 
@@ -102,14 +102,10 @@ array([[[1.],
         [1.],
         [1.]]], dtype=float32)>
 
-tensor2 = <tf.Tensor: shape=(2, 3, 1), dtype=float32, numpy=
-array([[[1.],
-        [1.],
-        [1.]],
-
-       [[1.],
-        [1.],
-        [1.]]], dtype=float32)>
+tensor3 = <tf.Tensor: shape=(3, 2), dtype=float32, numpy=
+array([[1., 1.],
+       [1., 1.],
+       [1., 1.]], dtype=float32)>
 
 ```
 

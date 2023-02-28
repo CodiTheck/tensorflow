@@ -10,3 +10,8 @@ Les algorithmes sur lesquels nous allons nous concentrer sont les suivants:
 Il existe de nombreux outils au sein de TensorFlow qui pourraient être utilisés pour résoudre les problèmes que nous allons voir ci-dessous. J'ai choisi les outils qui, selon moi, offrent le plus de variété et sont les plus faciles à utiliser.
 
 
+<br/>
+<br/>
+
+<-- Je reviens à la session **précédente**: [TensorFlow](../README.md)
+

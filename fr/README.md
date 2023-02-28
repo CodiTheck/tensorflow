@@ -141,3 +141,8 @@ tf.print(tensor1)
 
 Dans le code ci-dessus, nous avons évalué la variable tensorielle qui était stockée dans le *graphe par défaut*. Le graphe par défaut contient toutes les opérations qui ne sont pas spécifiées dans un autre graphe. Il est possible de créer nos propres graphes séparés. Mais pour l'instant, nous allons nous en tenir au graphe par défaut.
 
+<br/>
+<br/>
+
+- --> Je passe à la session **suivante**: [Algorithmes d'apprentissage fondamentaux](./core_learning_algorithms/README.md)
+- <-- Je reviens à la session **précédente**: [Accueil](../README.md)

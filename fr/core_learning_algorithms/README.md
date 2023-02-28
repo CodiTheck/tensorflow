@@ -37,7 +37,7 @@ plt.show()
 ![](./images/Figure_1.png)
 
 
-$$ \sqrt{3} $$
+![equation](http://www.sciweavers.org/tex2img.php?eq=y%20%3D%20%20ax%20%2B%20b&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
 
 <br/>
 <br/>

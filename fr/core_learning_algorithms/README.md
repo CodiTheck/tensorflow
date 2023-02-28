@@ -36,9 +36,8 @@ plt.show()
 
 ![](./images/Figure_1.png)
 
-```math
-\sqrt{3}
-```
+
+$$ \sqrt{3} $$
 
 <br/>
 <br/>

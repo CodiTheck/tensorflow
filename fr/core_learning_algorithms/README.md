@@ -172,9 +172,9 @@ plt.show()
 
 Après avoir analysé ces informations, on note ce qui suit:
 - La majorité des passagers ont entre 20 et 30 ans.
-- La majorité des passagers sont mal
-- La majorité des passagers sont en "troisième" classe
-- Les femmes ont beaucoup plus de chances de survie.
+- La majorité des passagers sont des hommes.
+- La majorité des passagers sont en "troisième" classe.
+- La majorité des femmes ont survécues.
 
 
 ### Régression linéaire

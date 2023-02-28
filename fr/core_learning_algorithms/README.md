@@ -44,5 +44,3 @@ $$ (E=mc^2)，x_{1,2} = \frac{-b \sqrt{b^2-4ac}}{2b}. $$
 
 [<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-

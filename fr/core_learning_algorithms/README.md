@@ -236,5 +236,6 @@ Une fois que nous avons généré cette ligne pour notre ensemble de données, n
 <br/>
 <br/>
 
-[<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)
+- Je passe à la session **suivante**: [Réseaux de neurones -->](../neural_networks/README.md)
+- [<--](../tensors/README.md) Je reviens à la session **précédente**: [Les tenseurs](../tensors/README.md)
 

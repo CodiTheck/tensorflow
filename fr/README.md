@@ -145,4 +145,4 @@ Dans le code ci-dessus, nous avons évalué la variable tensorielle qui était s
 <br/>
 
 - --> Je passe à la session **suivante**: [Algorithmes d'apprentissage fondamentaux](./core_learning_algorithms/README.md)
-- <-- Je reviens à la session **précédente**: [Accueil](../)
+- <-- Je reviens à la session **précédente**: [Accueil](../README.md)

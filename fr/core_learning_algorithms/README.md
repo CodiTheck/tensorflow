@@ -11,6 +11,42 @@ Les algorithmes sur lesquels nous allons nous concentrer sont les suivants:
 
 Il existe de nombreux outils au sein de TensorFlow qui pourraient être utilisés pour résoudre les problèmes que nous allons voir ci-dessous. J'ai choisi les outils qui, selon moi, offrent le plus de variété et sont les plus faciles à utiliser.
 
+### Configuration et importation des modules
+Avant de continuer, tu dois installer `scikit-learn` et importer les modules ci-dessous.
+
+```sh
+# ~$
+pip install -q sklearn
+```
+
+> Dans ce cour et tous les autres cours à venir, si le symbole `~$` se trouve au début d'un block
+> de code, cela signifie qu'il s'agit de lignes de commande qu'on peut exécuter dans un terminal.
+
+La ligne suivante n'est pas requise sauf si tu travail dans un `notebook`.
+
+```python
+%tensorflow_version 2.x
+```
+
+```python
+# Importation des modules.
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from IPython.display import clear_output
+from six.moves import urllib
+
+# tensorflow
+import tensorflow.compat.v2.feature_column as fc
+import tensorflow as tf
+
+```
+
+### Les données
+Donc, si tu ne le sais pas encore, les données constituent une partie importante de l'apprentissage automatique !
+
 ### Régression linéaire
 La régression linéaire est l'une des formes les plus fondamentales de l'apprentissage automatique et est utilisée pour prédire des valeurs numériques. Dans ce cours, nous allons utiliser un modèle linéaire pour prédire le taux de survie des passagers à partir de l'ensemble de données du Titanic.
 
@@ -62,6 +98,10 @@ plt.show()
 ```
 
 ![](./images/Figure_2.png)
+
+Une fois que nous avons généré cette ligne pour notre ensemble de données, nous pouvons utiliser son équation pour prédire les futures valeurs.
+
+
 
 <br/>
 <br/>

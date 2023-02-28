@@ -10,5 +10,5 @@ Created by the **Google Brain** team in *2011*, as a proprietary system dedicate
 <br/>
 
 If you want to follow the course on TensorFlow, click on one of the options below.
-- The French version is [here](./fr/).
+- The French version is [here](./fr/README.md).
 - The English version is [here](./en/).

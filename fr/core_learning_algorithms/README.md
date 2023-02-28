@@ -37,10 +37,12 @@ plt.show()
 ![](./images/Figure_1.png)
 
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=y%20%3D%20%20ax%20%2B%20b&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+$$ (E=mc^2)，x_{1,2} = \frac{-b \sqrt{b^2-4ac}}{2b}. $$
 
 <br/>
 <br/>
 
 [<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 

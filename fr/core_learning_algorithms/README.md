@@ -74,6 +74,10 @@ print(df_train)
 y_train = df_train.pop("survived")
 y_eval = df_eval.pop("survived")
 
+# Note:
+# les raisons pour lesquelles la dataset a été séparée en deux
+# est l'évaluation et le calcule de pourcentage de précision
+# du modèle après entrainement.
 ```
 
 Ce code produit le résultat ci-dessous:
@@ -114,7 +118,7 @@ qu'on va essayer de prédire avec notre modèle. On va donc appeller cette colon
 que la personne n'a pas survécu, et `1` signifie que la personne a survécu.<br/> 
 
 Concernant la colonne des informations sur les survivants qui avait été extraite,
-elle est belle et bien stocké dans la variable `y_train`.
+elle est belle et bien stockée dans la variable `y_train`.
 
 ```python
 print(y_train.head())
@@ -168,8 +172,10 @@ min      0.750000            0.000000    0.000000    0.000000
 max     80.000000            8.000000    5.000000  512.329200
 ```
 
-Maintenant, en y réfléchissant seul pendant une seconde, et en regardant certaines des catégories que nous avons ici, pouvez-vous penser à la raison pour laquelle la régression linéaire serait un bon algorithme pour quelque chose comme ça ? Analysons un peut.
-- Si la passager est une femme, on peut supposer qu'elle aura plus de chances de survivre, juste parce que vous savez, la façon dont notre culture fonctionne, les femmes et les enfants sont sauvés d'abord, on est d'accord ? Et si regarde bien cet ensemble de données, tu remarquera que lorsqu'il s'agit d'une femme, il est assez rare qu'elle n'ait pas survécue. D'ailleurs, essayons d'afficher le graphe du pourcentage des survivants en fonction du sexe.
+Maintenant, en y réfléchissant seul pendant une seconde, et en regardant certaines des catégories que nous avons ici, peux tu penser à la raison pour laquelle la régression linéaire serait un bon algorithme pour quelque chose comme ça ? Eh bien, analysons un peut notre
+ensemble de données.
+
+- Si le passager est une femme, on peut supposer qu'elle aura plus de chances de survivre, juste parce que, tu le sais, la façon dont notre culture fonctionne, les femmes et les enfants sont sauvés d'abord, on est d'accord ? Et si tu regarde bien cet ensemble de données, tu remarquera que lorsqu'il s'agit d'une femme, il est assez rare qu'elle n'ait pas survécue. D'ailleurs, essayons d'afficher le graphe du pourcentage des survivants en fonction du sexe.
 
 
 ```python
@@ -197,14 +203,37 @@ plt.show()
 
 ![](./images/Figure_3.png)
 
-Peut on penser comment l'âge pourrait avoir d'inffluance sur les résultats ? Eh bien, je suppose que si passager est beaucoup plus jeune, alors il a probablement plus de chances de survivre, parce qu'il serait, vous savez, prioritaire pour être secouru par un canots de sauvetage ou quoi que ce soit, je ne sais pas grand-chose. Je ne peux donc tirer aucune conclusion à ce sujet.
-J'essaie juste de passer en revue les attributs pour t'expliquer pourquoi nous devons choisir cet algorithme.
+Peut on penser comment l'âge pourrait avoir d'inffluance sur les résultats ? Eh bien, je suppose que si le passager est beaucoup plus jeune, alors il a probablement plus de chances de survivre, parce qu'il serait, comme tu le sais déjà, prioritaire pour être secouru par un canots de sauvetage ou quoi que ce soit, je ne sais pas grand-chose. Je ne peux donc tirer aucune conclusion à ce sujet.
+J'essaie juste de passer en revue les attributs pour t'expliquer pourquoi nous devons choisir l'algorithme de la régression linéaire.
 
+- Le nombre de frères et sœurs (`n_siblings_spouses`) n'influe pas forcément sur la prédiction, à mon avis.
+- Donc la colone `"class"` porte les informnations sur la classe de chaque passager dans le bateau. Il y avait trois (3), première classe, 
+deuxième classe et troisième classe.
 
+```python
+pd.concat(ds_with_survived_column, axis=1).groupby('class')\
+        .survived.mean()\
+        .plot(kind='barh')\
+        .set_xlabel('% survive')
 
+plt.show()
+
+```
+
+![](./images/Figure_7.png)
+
+En exploitant le graphe ci-dessus, On pourrait donc penser qu'un passager qui fait partie d'une classe supérieure a plus de chances de survivre.
+
+- Concernant la colonne `"alone"`, reprenons le code de représentation graphique ci-dessus et remplace tout simplement 
+`'class'` par `'alone'` et exécute le code ensuite. Moi, lorsque j'exécute, j'ai le graphe ci-dessous:
+
+![](./images/Figure_8.png)
+
+Après analyse, on constate que c'est ceux qui ont voyagés seul qui ont eu plus de change.<br/>
 
 
 ```python
+# Pour représenter les effectifs totaux au niveau des deux sexes.
 df_train.sex.value_counts().plot(kind='barh')
 plt.show()
 
@@ -213,6 +242,7 @@ plt.show()
 ![](./images/Figure_4.png)
 
 ```python
+# Pour représenter les effectifs totaux au niveau des trois classes.
 df_train['class'].value_counts().plot(kind='barh')
 plt.show()
 
@@ -225,7 +255,9 @@ Après avoir analysé toutes ces informations, on note ce qui suit:
 - La majorité des passagers ont entre 20 et 30 ans.
 - La majorité des passagers sont des hommes.
 - La majorité des passagers sont en "troisième" classe.
-- La majorité des femmes ont survécues.
+- La majorité des passagers qui ont survécues sont des femme.
+- La majorité des passagers qui ont survécues on voyagé seul.
+- La majorité des passagers qui ont survécues font partie de la première classe (classe supérieur).
 
 
 ### Régression linéaire

@@ -16,8 +16,8 @@ Oui, je sais, ce n'est pas très jolie, mais ne fait pas attention ! Ainsi, pour
 
 $$
 y = \sum_{i=1}^{n}{w_{i}x_{i}} + b
-
 $$
+
 Avec:
 - $w_{i}$ les poids de chaque connexion du neurone.
 - $x_{i}$ les valeurs des variables qui caractérisent chaque données de la dataset, si ce neurone se trouve sur la couche d'entrée. Sinon, $x_{i}$ représentera les valeurs de toutes les sorties des neurones de la couche précédent celle de ce neurone.
@@ -27,7 +27,40 @@ Avec:
 - Le symbole mathématique $\sum{}$ (grand sigma) représente la somme.
 
 
+### Fonction d'activation
+Les fonctions d'activation sont simplement des fonctions qui sont appliquées à la somme des poids d'un neurone. Elles peuvent être ce que l'on veut. Mais ce sont généralement des fonctions d'ordre/degré supérieur qui visent à ajouter une dimension supérieure à nos données. <br/>
 
+Soit $F$ une fonction d'activation. Cette dernière est appliqué comme ci-dessous:
+
+$$
+y = F(\sum_{i=1}^{n}{w_{i}x_{i}} + b)
+$$
+
+Utiliser une fonction d'activation nous permet d'introduire plus de complexité dans notre modèle.
+En transportant nos données dans une dimension supérieure, on arrive généralement à faire de meilleures prédictions plus complexes. <br/>
+
+#### Fonction ReLU
+
+![ReLu](./images/relu.jpg)
+
+Cette fonction s'appelle **ReLU** (Rectified Linear Unit). Elle prend toutes les valeurs qui sont inférieures à zéro et les rend nulles. Donc toutes les valeurs de `x` qui sont, tu sais, dans le *négatif*, ça rend juste leur `y` nul. Et toutes les valeurs positives sont égales à eux mêmes. Donc si `x = 10`, alors `y = 10`.
+
+$$
+F(x) = ReLU(x) = max(0, x)
+$$
+
+Le maximum entre `0` et un nombre négatif est `0` et le maximum entre `0` et un nombre positif
+est nombre positif. Cela nous permet d'éliminer tous les nombres négatifs, n'est-ce pas ?
+
+#### Fonction Tangante hyperbolique
+
+![tanh](./images/tanh.png)
+
+Cela écrase en fait nos valeurs entre `-1` et `1`. Donc ça prend n'importe quelle valeur. Plus les valeurs sont positives, plus elles sont proches de `1`, plus elles sont négatives, plus elles sont proches de `-1`.
+
+$$
+F(x) = tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$
 
 
 <br/>

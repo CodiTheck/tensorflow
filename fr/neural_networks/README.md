@@ -1,4 +1,5 @@
-![](https://img.shields.io/badge/lastest-2023--03--01-success) (En cour de rédaction...)
+![](https://img.shields.io/badge/lastest-2023--03--01-success)
+![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
 ## Réseaux de neurones
 Un réseau de neurones artificiels s'inspire du fonctionnement de celui du cerveau humain et prend corps dans un ordinateur. Au sein du réseau, les neurones sont structurés par couches. Il n'y a pas de connexion entre les neurones d'une même couche. Donc, les connexions ne se font qu'avec les neurones de la couche suivante (voir figure ci-dessous). Généralement, chaque neurone d'une couche $h_{i}$ est lié avec tous les neurones de la couche en aval $h_{i+1}$ (couche suivante) et celle-ci uniquement, par ce qu'on appelle un poid (un nombre). On appelle couche d'entrée $i$, l’ensemble des neurones d'entrée et couche de sortie $o$, l’ensemble des neurones de sortie. Les couches intermédiaires $h_{1}, h_{2}, ..., h_{n}$ n'ont pas de contact avec l'extérieur et sont donc nommées `couches cachées` (hidden layers). Chaque neurone est une unité de calcul autonome et indépendante des autres neurones. Dans les cas les plus courants, chaque couche a un **biais** qu'on note généralement `b` et qui est aussi un nombre. <br/>

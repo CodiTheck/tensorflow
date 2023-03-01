@@ -1,4 +1,5 @@
-![](https://img.shields.io/badge/lastest-2023--02--28-success) (En cour de rédaction...)
+![](https://img.shields.io/badge/lastest-2023--03--01-success)
+![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
 ## Algorithmes d'apprentissage fondamentaux
 Dans cette note de cour, nous allons parcourir 4 algorithmes fondamentaux d'apprentissage automatique. Nous appliquerons chacun de ces algorithmes à des problèmes et des ensembles de données uniques avant de mettre en évidence les cas d'utilisation de chacun.<br/>
@@ -49,20 +50,52 @@ Donc, si tu ne le sais pas encore, les données constituent une partie important
 
 Le jeu de données (dataset) sur lequel nous allons travailler est celui du Titanic. Il contient des tonnes d'informations sur chaque passager du navire. Notre première étape sera d'explorer les données afin de les comprendre. C'est donc ce que nous allons faire ! <br/>
 
+Il s'agit donc essentiellement de prédire qui va survivre, ou la probabilité que quelqu'un survive au Titanic, à partir d'un ensemble d'informations. On a donc besoin de charger cet ensemble de données.
+
 Ci-dessous, nous allons charger le jeu de données et apprendre comment l'explorer à l'aide de certains outils intégrés.
 
 ```python
-# Load dataset:
-# On va charger les données pour l'entrainement des modèles:
+# On va utiliser pandas  pour charger les données
+# qui sont disponibles au format CSV (Comma Separated Values).
+# On va charger les données pour l'entrainement du modèle:
 df_train = pd.read_csv("https://storage.googleapis.com/tf-datasets/titanic/train.csv")
 
-# On va charger les données pour l'évaluation des modèles après leur entrainements:
+# On va charger les données pour l'évaluation du modèle:
 df_eval = pd.read_csv("https://storage.googleapis.com/tf-datasets/titanic/eval.csv")
+
+# Après le chargement, on affiche juste les données
+# qu'on va utiliser pour l'entraînement.
+print(df_train)
 
 y_train = df_train.pop("survived")
 y_eval = df_eval.pop("survived")
 
 ```
+
+Ce code produit le résultat ci-dessous:
+
+```
+     survived     sex   age  n_siblings_spouses  parch     fare   class     deck  embark_town alone
+0           0    male  22.0                   1      0   7.2500   Third  unknown  Southampton     n
+1           1  female  38.0                   1      0  71.2833   First        C    Cherbourg     n
+2           1  female  26.0                   0      0   7.9250   Third  unknown  Southampton     y
+3           1  female  35.0                   1      0  53.1000   First        C  Southampton     n
+4           0    male  28.0                   0      0   8.4583   Third  unknown   Queenstown     y
+..        ...     ...   ...                 ...    ...      ...     ...      ...          ...   ...
+622         0    male  28.0                   0      0  10.5000  Second  unknown  Southampton     y
+623         0    male  25.0                   0      0   7.0500   Third  unknown  Southampton     y
+624         1  female  19.0                   0      0  30.0000   First        B  Southampton     y
+625         0  female  28.0                   1      2  23.4500   Third  unknown  Southampton     n
+626         0    male  32.0                   0      0   7.7500   Third  unknown   Queenstown     y
+
+[627 rows x 10 columns]
+```
+
+Et voici à quoi ressemble notre ensemble de données ! Je sais que cela semble être un tas de charabia, 
+mais c'est comme ça que nous devons le charger.<br/>
+
+Nous avons donc nos colonnes, qui représentent simplement les différents attributs dans notre ensemble de données.
+Et de ces différents attributs de notre ensemble de données, nous avons `"survived"`.
 
 La fonction `pd.read_csv()` nous renvoie un nouvelle instance de `DataFrame` de pandas. Vous pouvez considérer un *dataframe* comme un tableau.<br/>
 

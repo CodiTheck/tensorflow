@@ -50,9 +50,13 @@ Donc, si tu ne le sais pas encore, les données constituent une partie important
 
 Le jeu de données (dataset) sur lequel nous allons travailler est celui du Titanic. Il contient des tonnes d'informations sur chaque passager du navire. Notre première étape sera d'explorer les données afin de les comprendre. C'est donc ce que nous allons faire ! <br/>
 
-Il s'agit donc essentiellement de prédire qui va survivre, ou la probabilité que quelqu'un survive au Titanic, à partir d'un ensemble d'informations. On a donc besoin de charger cet ensemble de données.
+Il s'agit donc essentiellement de prédire qui va survivre, ou la probabilité que quelqu'un survive au Titanic, à partir d'un ensemble d'informations. On a donc besoin de charger cet ensemble de données.<br/>
 
-Ci-dessous, nous allons charger le jeu de données et apprendre comment l'explorer à l'aide de certains outils intégrés.
+Ci-dessous, nous allons charger le jeu de données et apprendre comment l'explorer à l'aide de certains outils intégrés.<br/>
+
+La fonction `pd.read_csv()` nous renvoie un nouvelle instance de `DataFrame` de pandas. Vous pouvez considérer un *dataframe* comme un tableau. C'est donc avec cette fonction qu'on charger notre ensemble de donnée encore appeler **dataset** en Anglais. <br/>
+
+Avec la fonction `pop()`, on va extraire la colonne `"survived"` de notre dataset pour la stocker dans une nouvelle variable (`y_train` et `y_eval`). Cette colonne nous indique simplement si la personne a survécu ou non.<br/>
 
 ```python
 # On va utiliser pandas  pour charger les données
@@ -94,14 +98,40 @@ Ce code produit le résultat ci-dessous:
 Et voici à quoi ressemble notre ensemble de données ! Je sais que cela semble être un tas de charabia, 
 mais c'est comme ça que nous devons le charger.<br/>
 
-Nous avons donc nos colonnes, qui représentent simplement les différents attributs dans notre ensemble de données.
-Et de ces différents attributs de notre ensemble de données, nous avons `"survived"`.
+Et puisque nous avions eu à étudier les dimensions, dans la session précédente, voyons cela aussi ici !
 
-La fonction `pd.read_csv()` nous renvoie un nouvelle instance de `DataFrame` de pandas. Vous pouvez considérer un *dataframe* comme un tableau.<br/>
+```python
+sh = df_train.shape
+print(sh)  # Ce qui affiche: (627, 9)
 
-Avec la fonction `pop()`, on a extrait la colonne `"survived"` de notre dataset pour la stocker dans une nouvelle variable (`y_train` et `y_eval`). Cette colonne nous indique simplement si la personne a survécu ou non.<br/>
+```
 
-Pour afficher les données, nous allons utiliser la méthode `head()` de l'instance `DataFrame`. Cela nous affichera les 5 premiers éléments de notre dataframe.
+Donc, on a 627 éléments et 9 caractéristiques (variables) observées sur chacun de ces éléments. <br/>
+
+Nous avons donc nos colonnes, qui représentent simplement les différents attributs ou variables dans notre ensemble de données.
+Et de ces différents attributs de notre ensemble de données, nous avons la colonne `"survived"`. Ce sont les valeur de cette dernière
+qu'on va essayer de prédire avec notre modèle. On va donc appeller cette colonne **notre étiquette**. Ainsi, ici, `0` signifie
+que la personne n'a pas survécu, et `1` signifie que la personne a survécu.<br/> 
+
+Concernant la colonne des informations sur les survivants qui avait été extraite,
+elle est belle et bien stocké dans la variable `y_train`.
+
+```python
+print(y_train.head())
+
+```
+
+```
+0    0
+1    1
+2    1
+3    1
+4    0
+Name: survived, dtype: int64
+```
+
+Pour afficher les données, on peut utiliser la méthode `head()` de l'instance `DataFrame`. Elle permet tout simplement 
+d'afficher les 5 premiers éléments en tête de liste de notre dataframe.
 
 ```python
 head = df_train.head()
@@ -138,34 +168,26 @@ min      0.750000            0.000000    0.000000    0.000000
 max     80.000000            8.000000    5.000000  512.329200
 ```
 
-Et puisque nous avions eu à étudier les dimensions, dans la session précédente, voyons cela aussi ici !
+Maintenant, en y réfléchissant seul pendant une seconde, et en regardant certaines des catégories que nous avons ici, pouvez-vous penser à la raison pour laquelle la régression linéaire serait un bon algorithme pour quelque chose comme ça ? Analysons un peut.
+- Si la passager est une femme, on peut supposer qu'elle aura plus de chances de survivre, juste parce que vous savez, la façon dont notre culture fonctionne, les femmes et les enfants sont sauvés d'abord, on est d'accord ? Et si regarde bien cet ensemble de données, tu remarquera que lorsqu'il s'agit d'une femme, il est assez rare qu'elle n'ait pas survécue. D'ailleurs, essayons d'afficher le graphe du pourcentage des survivants en fonction du sexe.
+
 
 ```python
-sh = df_train.shape
-print(sh)  # Ce qui affiche: (627, 9)
+# On reconstitue la dataset avec la colonne "survived"
+# pour qu'on puisse compter.
+ds_with_survived_column = [df_train, y_train]
+pd.concat(ds_with_survived_column, axis=1).groupby('sex')\
+        .survived.mean()\
+        .plot(kind='barh')\
+        .set_xlabel('% survive')
+
+plt.show()
 
 ```
 
-Donc, on a 627 éléments et 9 caractéristiques (variables) observées sur chacun de ces éléments. <br/>
+![](./images/Figure_6.png)
 
-Concernant la colonne des informations sur les survivants, on a:
-
-```python
-print(y_train.head())
-
-```
-
-```
-0    0
-1    1
-2    1
-3    1
-4    0
-Name: survived, dtype: int64
-```
-
-Note que chaque entrée est soit un 0, soit un 1. Tu peux déjà laquelle représente la survie !<br/>
-Etant donné que les images sont toujours beaucoup plus parlant, nous allons générer quelques graphiques issues de ces données.
+- Maintenant, si nous regardons l'âge.
 
 ```python
 df_train.age.hist(bins=20)
@@ -174,6 +196,13 @@ plt.show()
 ```
 
 ![](./images/Figure_3.png)
+
+Peut on penser comment l'âge pourrait avoir d'inffluance sur les résultats ? Eh bien, je suppose que si passager est beaucoup plus jeune, alors il a probablement plus de chances de survivre, parce qu'il serait, vous savez, prioritaire pour être secouru par un canots de sauvetage ou quoi que ce soit, je ne sais pas grand-chose. Je ne peux donc tirer aucune conclusion à ce sujet.
+J'essaie juste de passer en revue les attributs pour t'expliquer pourquoi nous devons choisir cet algorithme.
+
+
+
+
 
 ```python
 df_train.sex.value_counts().plot(kind='barh')
@@ -191,19 +220,8 @@ plt.show()
 
 ![](./images/Figure_5.png)
 
-```python
-pd.concat([df_train, y_train], axis=1).groupby('sex')\
-        .survived.mean()\
-        .plot(kind='barh')\
-        .set_xlabel('% survive')
 
-plt.show()
-
-```
-
-![](./images/Figure_6.png)
-
-Après avoir analysé ces informations, on note ce qui suit:
+Après avoir analysé toutes ces informations, on note ce qui suit:
 - La majorité des passagers ont entre 20 et 30 ans.
 - La majorité des passagers sont des hommes.
 - La majorité des passagers sont en "troisième" classe.

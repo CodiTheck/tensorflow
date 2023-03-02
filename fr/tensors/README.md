@@ -79,6 +79,8 @@ print(f"{tensor3 = }\n")
 
 ```
 
+Ce qui produit le résultat suivant:
+
 ```
 tensor1 = <tf.Tensor: shape=(1, 2, 3), dtype=float32, numpy=
 array([[[1., 1., 1.],
@@ -136,4 +138,5 @@ Dans le code ci-dessus, nous avons évalué la variable tensorielle qui était s
 <br/>
 
 - Je passe à la session **suivante**: [Algorithmes d'apprentissage fondamentaux -->](../core_learning_algorithms/README.md)
-- [<--](../README.md) Je reviens à la session **précédente**: [Introduction](../README.md)
+- [<--](../generalities/README.md) Je reviens à la session **précédente**: [Les généralités](../generalities/README.md)
+

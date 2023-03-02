@@ -28,9 +28,8 @@ TensorFlow possède un très bon outil de visualisation qui s’appelle TensorBo
 1. Avoir quelque notion de base en mathématique.
 2. Savoir écrire des algorithmes et programmer dans un langage de programmation.
 3. Savoir programmer en langage **Python**.
-4. Maîtriser les bases de la programmation orientée objet.
-5. Même si ce n'est pas obligatoire avant de commencer ce cour, il faut au moins avoir suivie un cour de **machine learning** et/ou de **data science** ailleurs qu'ici.
-Car je ne vais pas trop m'attarder sur ces notions de base.<br/>
+4. Maîtriser les bases de la programmation orientée objet (**POO**).
+5. Même si ce n'est pas obligatoire avant de commencer ce cour, il faut au moins avoir suivie un cour de **machine learning** et/ou de **data science** ailleurs qu'ici. Car je ne vais pas trop m'attarder sur ces notions de base.<br/>
 
 Quant à moi, avant de commencer la programmation avec TensorFlow, dans une session introductive, je vais d'abord te parler un peu des réseaux de neurones et de leurs expressions mathématiques. Mais, avant cela, je vais quand même consacrer quelques paragraphes pour te parler de l'intelligence artificielle, l'apprentissage automatique (Machine Learning) et de la différence qui existe entre ces deux notions. Pourquoi ? Et bien, parce que nous allons couvrir tous ces thèmes tout au long de ce cours. Il est donc vital que tu comprenne ce que ces trois thèmes signifient réellement.
 
@@ -39,5 +38,5 @@ Quant à moi, avant de commencer la programmation avec TensorFlow, dans une sess
 <br/>
 <br/>
 
-- Je passe à la session **suivante**: [Les tenseurs -->](./tensors/README.md)
+- Je passe à la session **suivante**: [Les généralités -->](./generalities/README.md)
 - [<--](../README.md) Je reviens à la session **précédente**: [Accueil](../README.md)

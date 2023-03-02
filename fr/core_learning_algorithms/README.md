@@ -1,7 +1,7 @@
+# Algorithmes d'apprentissage fondamentaux
 ![](https://img.shields.io/badge/lastest-2023--03--01-success)
 ![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
-## Algorithmes d'apprentissage fondamentaux
 Dans cette note de cour, nous allons parcourir 4 algorithmes fondamentaux d'apprentissage automatique. Nous appliquerons chacun de ces algorithmes à des problèmes et des ensembles de données uniques avant de mettre en évidence les cas d'utilisation de chacun.<br/>
 
 Les algorithmes sur lesquels nous allons nous concentrer sont les suivants:
@@ -12,7 +12,7 @@ Les algorithmes sur lesquels nous allons nous concentrer sont les suivants:
 
 Il existe de nombreux outils au sein de TensorFlow qui pourraient être utilisés pour résoudre les problèmes que nous allons voir ci-dessous. J'ai choisi les outils qui, selon moi, offrent le plus de variété et sont les plus faciles à utiliser.
 
-### Configuration et importation des modules
+## Configuration et importation des modules
 Avant de continuer, tu dois installer `scikit-learn` et importer les modules ci-dessous.
 
 ```sh
@@ -45,7 +45,7 @@ import tensorflow as tf
 
 ```
 
-### Les données
+## Les données
 Donc, si tu ne le sais pas encore, les données constituent une partie importante de l'apprentissage automatique ! En fait, c'est tellement important que la plupart des activités de ce cours porteront sur l'exploration, le nettoyage et la sélection des données appropriées.<br/>
 
 Le jeu de données (dataset) sur lequel nous allons travailler est celui du Titanic. Il contient des tonnes d'informations sur chaque passager du navire. Notre première étape sera d'explorer les données afin de les comprendre. C'est donc ce que nous allons faire ! <br/>
@@ -260,10 +260,10 @@ Après avoir analysé toutes ces informations, on note ce qui suit:
 - La majorité des passagers qui ont survécues font partie de la première classe (classe supérieur).
 
 
-### Régression linéaire
+## Régression linéaire
 La régression linéaire est l'une des formes les plus fondamentales de l'apprentissage automatique et est utilisée pour prédire des valeurs numériques. Dans ce cours, nous allons utiliser un modèle linéaire pour prédire le taux de survie des passagers à partir de l'ensemble de données du Titanic.
 
-#### Comment ça marche ?
+### Comment ça marche ?
 Avant de nous plonger dans le vif du sujet, je vais te donner une explication très superficielle de l'algorithme de régression linéaire.<br/>
 
 La régression linéaire suit un concept très simple. Si les points de données sont liés de façon linéaire, alors nous pouvons générer une ligne (droite) de meilleur ajustement pour ces points et l'utiliser pour prédire les futures valeurs.<br/>
@@ -319,6 +319,6 @@ Une fois que nous avons généré cette ligne pour notre ensemble de données, n
 <br/>
 <br/>
 
-- Je passe à la session **suivante**: [Réseaux de neurones -->](../neural_networks/README.md)
-- [<--](../tensors/README.md) Je reviens à la session **précédente**: [Les tenseurs](../tensors/README.md)
+- Je passe à la session **suivante**: [Deep Learning -->](../deep_learning/README.md)
+- [<--](../generalities/README.md) Je reviens à la session **précédente**: [Généralités](../generalities/README.md)
 

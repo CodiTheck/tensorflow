@@ -1,6 +1,6 @@
+# Les tenseurs
 ![](https://img.shields.io/badge/lastest-2023--02--28-success)
 
-## Les tenseurs
 Un tenseur est une généralisation des vecteurs et des matrices à des dimensions potentiellement plus élevées. En interne, `TensorFlow` représente les tenseurs comme des tableaux à **n-dimensions** contenant des données de type de base. <br/>
 
 Ne sois pas surpris que les tenseurs soient un aspect fondamental de TensorFlow. Ce sont les principaux objets qui sont passés et sont manipulés tout au long du programme. Chaque tenseur représente un calcul partiellement défini qui produira éventuellement une valeur. Les programmes TensorFlow fonctionnent en construisant un graphe d'objets `Tensor` qui détaille la façon dont les tenseurs sont liés.
@@ -10,7 +10,7 @@ Chaque tenseur a un type de données et une dimension (`shape`).
 - Les types données peuvent être: `float32`, `int32`, `string` et autres types.
 - `shape` représente les dimentions des données contenues dans le tenseur.
 
-### Création d'un tenseur
+## Création d'un tenseur
 Vous trouverez ci-dessous un exemple de création de différents tenseurs.
 
 ```python
@@ -23,7 +23,7 @@ floating = tf.Variable(3.567, tf.float64)
 
 ```
 
-### Rang/degré d'un tenseur
+## Rang/degré d'un tenseur
 Un autre mot pour le rang est le degré, ces termes signifient simplement le nombre de dimensions impliquées dans le tenseur. Ce que nous avons créé ci-dessus est un tenseur de rang `0`, également connu sous le nom de **scalaire**.<br/>
 
 Maintenant, nous allons créer un tenseur de plus haut degré/rang.
@@ -41,7 +41,7 @@ tf.rank(rank2_tensor)
 
 ```
 
-### Dimension des tenseurs
+## Dimension des tenseurs
 Maintenant que nous avons parlé du rang des tenseurs, il est temps de parler de leur forme. La forme d'un tenseur est simplement la quantité d'éléments qui existent dans chaque dimension. TensorFlow essaiera de déterminer la dimension d'un tenseur mais parfois elle peut être inconnue.<br/>
 
 Pour obtenir les dimension d'un tenseur, on utilise l'attribut `shape`.
@@ -51,7 +51,7 @@ rank2_tensor.shape  # Retourne un tuple
 
 ```
 
-### Redimensionnement d'un tenseur
+## Redimensionnement d'un tenseur
 Le nombre d'éléments d'un tenseur est le produit des valeurs `x1`, `x2`, ..., `xi`, ... `xn`, de toutes ses dimensions `(x1, x2, ..., xi, ..., xn)`. Etant donnée que deux tenseurs de dimensions différentes peuvent contenir le même nombre d'éléments, alors il est possible de changer les dimensions d'un tenseur. <br/>
 
 L'exemple ci-dessous montre comment changer les dimensions d'un tenseur.
@@ -102,7 +102,7 @@ array([[1., 1.],
 
 ```
 
-### Types de tenseurs
+## Types de tenseurs
 Avant que nous Ce sont les plus couramment utilisés et nous parlerons plus en profondeur de chacun d'eux au fur et à mesure de leur utilisation.
 
 - `Variable`;
@@ -113,7 +113,7 @@ Avant que nous Ce sont les plus couramment utilisés et nous parlerons plus en p
 À l'exception de `Variable`, tous ces tenseurs sont immuables, ce qui signifie que leur valeur ne peut pas changer pendant l'exécution. Pour l'instant, il suffit de comprendre que nous utilisons le tenseur `Variable` lorsque nous voulons potentiellement changer la valeur de notre tenseur.
 
 
-### Evaluation des tenseurs
+## Evaluation des tenseurs
 Parfois, on a besoin d'évaluer un tenseur. En d'autres termes, récupérer sa valeur. Comme les tenseurs représentent un calcul partiellement complet, nous devrons parfois exécuter ce que l'on appelle une **session** pour évaluer le tenseur. <br/>
 
 Il existe de nombreuses manières différentes d'y parvenir. Mais je vais noter ci-dessous la manière la plus simple.

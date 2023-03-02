@@ -1,7 +1,6 @@
+# Les généralités
 ![](https://img.shields.io/badge/lastest-2023--03--02-success)
 ![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
-
-# Les généralités
 
 ## Intelligence artificielle (IA)
 L'intelligence artificielle (IA) est un processus d'imitation de l'intelligence humaine qui repose sur la création et l'application d'algorithmes exécutés dans un environnement informatique dynamique. Son but est de permettre à des ordinateurs de penser et d'agir comme des êtres humains. le but est de permettre à une machine de faire des tâches que l'homme accomplit en utilisant son intelligence. Ainsi, une machine
@@ -43,12 +42,9 @@ Les algorithmes de machines learning sont reparties en trois (3) grandes famille
 ## Différence entre IA et machine learning
 Les algorithmes du Machine Learning utilisent les données fournies par la science des données pour devenir plus intelligents et mieux informés lors de l‘élaboration de prédictions. Par conséquent, les algorithmes de Machine Learning dépendent des données car ils ne peuvent pas apprendre sans les elles pour s’entrainer. Le Machine Learning n’est un sous-domaine de l’IA, ce qui signifie qu’il en existe beaucoup d’autres; il se compose de méthodes qui permettent aux ordinateurs de construire de l'expériences à partir des données et de les fournir aux applications d’IA.
 
-## Le deep learning
-Le deep learning est l'ensemble des algorithmes qui s'inspire du fonctionnement des réseaux neuronaux du cerveau humain.
-
 
 <br/>
 <br/>
 
-- Je passe à la session **suivante**: [Les tenseurs](../tensors/README.md)
+- Je passe à la session **suivante**: [Algorithmes d'apprentissage fondamentaux](../core_learning_algorithms/README.md)
 - [<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)

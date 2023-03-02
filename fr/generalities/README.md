@@ -1,6 +1,5 @@
 # Les généralités
 ![](https://img.shields.io/badge/lastest-2023--03--02-success)
-![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
 ## Intelligence artificielle (IA)
 L'intelligence artificielle (IA) est un processus d'imitation de l'intelligence humaine qui repose sur la création et l'application d'algorithmes exécutés dans un environnement informatique dynamique. Son but est de permettre à des ordinateurs de penser et d'agir comme des êtres humains. le but est de permettre à une machine de faire des tâches que l'homme accomplit en utilisant son intelligence. Ainsi, une machine

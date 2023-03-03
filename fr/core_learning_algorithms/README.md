@@ -319,6 +319,6 @@ Une fois que nous avons généré cette ligne pour notre ensemble de données, n
 <br/>
 <br/>
 
-- Je passe à la session **suivante**: [Deep Learning -->](../deep_learning/README.md)
-- [<--](../generalities/README.md) Je reviens à la session **précédente**: [Généralités](../generalities/README.md)
+- Je passe à la session **suivante**: [Deep Learning](../deep_learning/README.md)
+- [<--](../generalities/README.md) Je reviens à la session **précédente**: [Installation et configuration](../installation/README.md)
 

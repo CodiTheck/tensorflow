@@ -1,4 +1,4 @@
-# Les généralités
+# Généralités
 ![](https://img.shields.io/badge/lastest-2023--03--02-success)
 
 ## Intelligence artificielle (IA)
@@ -46,7 +46,7 @@ Les algorithmes du Machine Learning utilisent les données fournies par la scien
 <br/>
 
 
-- Je passe à la session **suivante**: [Installation](../installation/README.md)
+- Je passe à la session **suivante**: [Installation et configuration](../installation/README.md)
 - [<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)
 
 

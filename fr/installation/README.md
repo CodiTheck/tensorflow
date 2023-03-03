@@ -122,7 +122,7 @@ Je suis un peu désolé de te décevoir. Personnellement, je ne suis pas un gran
 
 
 - Je passe à la session **suivante**: [Algorithmes d'apprentissage fondamentaux](../core_learning_algorithms/README.md)
-- [<--](../generalities/README.md) Je reviens à la session **précédente**: [TensorFlow](../generalities/README.md) -->
+- [<--](../generalities/README.md) Je reviens à la session **précédente**: [Généralités](../generalities/README.md) -->
 
 <!--
 <div style="width: 100%; display: flex; justify-content: center;  column-gap: 20px;">

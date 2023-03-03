@@ -38,5 +38,7 @@ Quant à moi, avant de commencer la programmation avec TensorFlow, dans une sess
 <br/>
 <br/>
 
-- Je passe à la session **suivante**: [Les généralités](./generalities/README.md)
+
+- Je passe à la session **suivante**: [Généralités](./generalities/README.md)
 - [<--](../README.md) Je reviens à la session **précédente**: [Accueil](../README.md)
+

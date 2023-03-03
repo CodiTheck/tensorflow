@@ -13,8 +13,38 @@ On aura besoin d'installater les outils de la liste ci-dessous:
 - [scikit-learn](https://scikit-learn.org/stable/): La bibliothèque d'apprentissage automatique (Machine Learning) et de pré-traitement de données la plus populaire pour Python. Elle contient tous les algorithmes de machine learning les plus utilisés, tout, sauf les algorithmes de Deep Learning.
 - [tensorflow](https://www.tensorflow.org/install?hl=fr): La bibliothèque de deep learning. C'est elle qui fait l'objet de ce cour.
 
+<br/>
+<details>
+    <summary>Table des Contenus</summary>
+    <ul>
+        <li><a href="#sous-linux">Sous Linux</a>
+            <ul>
+                <li><a href="#installation">Installation</a>
+                    <ul>
+                        <li><a href="#installation-de-python">Installation de python</a></li>
+                        <li><a href="#installation-de-virtualenv">Installation de virtualenv</a></li>
+                        <li><a href="#installation-des-modules-fondamentaux">Installation des modules fondamentaux</a>
+                            <ul>
+                                <li><a href="#pandas">Pandas</a></li>
+                                <li><a href="#numpy">Numpy</a></li>
+                                <li><a href="#matplotlib">Matplotlib</a></li>
+                                <li><a href="#scikit-learn">Scikit-learn</a></li>
+                                <li><a href="#tensorflow">TensorFlow</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                <li>
+            </ul>
+        </li>
+        <li><a href="#sous-windows-et-mac">Sous Windows et Mac</a></li>
+    </ul>
+
+</details>
+<br/>
 
 ### Sous Linux
+> Dans ce cour et tous les autres cours à venir, si le symbole `~$` se trouve au début d'un block de code, cela signifie qu'il s'agit de lignes de commande qu'on peut exécuter dans un terminal.
+
 #### Installation
 ##### Installation de python
 

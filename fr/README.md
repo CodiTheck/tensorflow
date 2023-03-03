@@ -9,6 +9,17 @@ Créé par l’équipe **Google Brain** en *2011*, sous la forme d’un système
 
 <br/>
 
+<details>
+    <summary>Table des Contenus</summary>
+    <ul>
+        <li><a href="#avant-propos">Avant propos</a> </li>
+        <li><a href="#pourquoi-utiliser-tensorflow">Pourquoi utiliser TensorFlow ?</a> </li>
+        <li><a href="#prérequis">Prérequis</a> </li>
+    </ul>
+
+</details>
+<br/>
+
 
 ## Avant propos
 TensorFlow est une bibliothèque Open Source de **deep learning** créée par Google et compatible avec le langage **Python**. Il s’agit d’une boîte à outils permettant de standardiser et de simplifier la création et le déploiement de modèles de deep learning.<br/>

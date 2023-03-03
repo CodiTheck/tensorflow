@@ -1,4 +1,4 @@
-# Algorithmes d'apprentissage fondamentaux
+## Algorithmes d'apprentissage fondamentaux
 ![](https://img.shields.io/badge/lastest-2023--03--01-success)
 ![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
@@ -12,17 +12,7 @@ Les algorithmes sur lesquels nous allons nous concentrer sont les suivants:
 
 Il existe de nombreux outils au sein de TensorFlow qui pourraient être utilisés pour résoudre les problèmes que nous allons voir ci-dessous. J'ai choisi les outils qui, selon moi, offrent le plus de variété et sont les plus faciles à utiliser.
 
-## Configuration et importation des modules
-Avant de continuer, tu dois installer `scikit-learn` et importer les modules ci-dessous.
-
-```sh
-# ~$
-pip install -q sklearn
-```
-
-> Dans ce cour et tous les autres cours à venir, si le symbole `~$` se trouve au début d'un block
-> de code, cela signifie qu'il s'agit de lignes de commande qu'on peut exécuter dans un terminal.
-
+### Importation des modules
 La ligne suivante n'est pas requise sauf si tu travail dans un `notebook`.
 
 ```python

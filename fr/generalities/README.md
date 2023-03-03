@@ -45,5 +45,14 @@ Les algorithmes du Machine Learning utilisent les données fournies par la scien
 <br/>
 <br/>
 
+<!--
 - Je passe à la session **suivante**: [Algorithmes d'apprentissage fondamentaux](../core_learning_algorithms/README.md)
 - [<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)
+
+-->
+
+<div style="width: 100%; display: flex; justify-content: center;  column-gap: 20px;">
+    <div style="border: 1px solid; padding: 1em;"><a href="../README.md"><< TensorFlow</a></div>
+    <div style="border: 1px solid; padding: 1em;"><a href="../installation/README.md">Algorithmes d'apprentissage fondamentaux >></a></div>
+
+</div>

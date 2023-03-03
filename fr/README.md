@@ -1,7 +1,7 @@
 # TensorFlow
 ![](https://img.shields.io/badge/version-2.9.1-orange)
 ![](https://img.shields.io/badge/lastest-2023--02--28-success)
-![](https://img.shields.io/badge/contact-dr.mokira%40gmail.com-red)
+![](https://img.shields.io/badge/contact-dr.mokira%40gmail.com-blueviolet)
 
 TensorFlow est une bibliothèque **open source** de Machine Learning, créée par Google, permettant de développer et d’exécuter des applications de Machine Learning et de Deep Learning.<br/>
 
@@ -38,5 +38,5 @@ Quant à moi, avant de commencer la programmation avec TensorFlow, dans une sess
 <br/>
 <br/>
 
-- Je passe à la session **suivante**: [Les généralités -->](./generalities/README.md)
+- Je passe à la session **suivante**: [Les généralités](./generalities/README.md)
 - [<--](../README.md) Je reviens à la session **précédente**: [Accueil](../README.md)

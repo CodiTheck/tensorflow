@@ -1,7 +1,6 @@
 # TensorFlow
-![](https://img.shields.io/badge/version-2.9.1-orange)
 ![](https://img.shields.io/badge/lastest-2023--02--28-success)
-![](https://img.shields.io/badge/contact-dr.mokira%40gmail.com-red)
+![](https://img.shields.io/badge/contact-dr.mokira%40gmail.com-blueviolet)
 
 TensorFlow is an **open source** Machine Learning library, created by Google, for developing and running Machine Learning and Deep Learning applications.<br/>
 

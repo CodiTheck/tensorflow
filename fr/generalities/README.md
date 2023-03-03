@@ -14,8 +14,7 @@
 <br/>
 
 ### Intelligence artificielle (IA)
-L'intelligence artificielle (IA) est un processus d'imitation de l'intelligence humaine qui repose sur la création et l'application d'algorithmes exécutés dans un environnement informatique dynamique. Son but est de permettre à des ordinateurs de penser et d'agir comme des êtres humains. le but est de permettre à une machine de faire des tâches que l'homme accomplit en utilisant son intelligence. Ainsi, une machine
-sera considérée comme intelligente si elle arrive a reproduit le comportement d'un être humain dans
+L'intelligence artificielle (IA) est un processus d'imitation de l'intelligence humaine qui repose sur la création et l'application d'algorithmes exécutés dans un environnement informatique dynamique. Son but est de permettre à des ordinateurs de penser et d'agir comme des êtres humains. le but est de permettre à une machine de faire des tâches que l'homme accomplit en utilisant son intelligence. Ainsi, une machine sera considérée comme intelligente si elle arrive a reproduit le comportement d'un être humain dans
 un domaine spécifique ou non. <br/>
 
 Les domaines d’application et usages potentiels d’une Intelligence Artificielle sont de plus en plus divers :
@@ -36,7 +35,14 @@ Les domaines d’application et usages potentiels d’une Intelligence Artificie
 
 bref... L’intelligence artificielle est une science qui bouleverse tous les secteurs dans tous les domaines. <br/>
 
-L'Intelligence Artificielle (IA) telle que nous la connaissons est une Intelligence Artificielle faible, par opposition à l'IA forte, qui n'existe pas encore. Aujourd'hui, les machines sont capables de reproduire un comportement humain, mais sans conscience. Plus tard, leurs capacités pourraient croître au point de se transformer en machines dotées de conscience, de sensibilité et d'esprit.
+L'Intelligence Artificielle (IA) telle que nous la connaissons est une Intelligence Artificielle faible, par opposition à l'IA forte, qui n'existe pas encore. Aujourd'hui, les machines sont capables de reproduire un comportement humain, mais sans conscience. Plus tard, leurs capacités pourraient croître au point de se transformer en machines dotées de conscience, de sensibilité et d'esprit. Le processus cognitif auquel l’intelligence artificielle aspire a été séparé en différentes compétences qui sont:
+
+- La compréhension ;
+- La communication ;
+- La mémorisation ;
+- Le raisonnement ;
+- L’adaptation ;
+- L’apprentissage automatique (Machine learning).
 
 ### Le machine learning
 Alors que l’intelligence artificielle tente d’imiter le raisonnement humain, le machine learning va plus loin. C’est cette branche de l’intelligence artificielle qui permet aux machines d’apprendre par elles-mêmes, sans dépendre de commandes. <br/>
@@ -51,6 +57,7 @@ Les algorithmes de machines learning sont reparties en trois (3) grandes famille
 - **L’apprentissage semi-supervisé**: Les algorithmes de Machine Learning semi-supervisés se situent entre l’apprentissage supervisé et non supervisé. Ils utilisent à la fois des données étiquetées et non étiquetées pour l’apprentissage.
 
 ### Différence entre IA et machine learning
+L’intelligence artificielle et le machine learning sont deux concepts visant à améliorer les compétences d’un système informatique. L'objectif principal de l'Intelligence Artificielle est d'apporter l'intelligence humaine aux machines or que le Machine Learning est un sous-ensemble de l'IA qui permet aux ordinateurs d'apprendre de façon autonome à exécuter des tâches en s'améliorant au fil du temps.
 
 
 <br/>

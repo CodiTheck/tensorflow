@@ -14,7 +14,7 @@ On aura besoin d'installater les outils de la liste ci-dessous:
 - [tensorflow](https://www.tensorflow.org/install?hl=fr): La bibliothèque de deep learning. C'est elle qui fait l'objet de ce cour.
 
 <br/>
-<details>
+<details id="table-content" open>
     <summary>Table des Contenus</summary>
     <ul>
         <li><a href="#sous-linux">Sous Linux</a>

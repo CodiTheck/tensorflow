@@ -1,7 +1,8 @@
 ## Généralités
 ![](https://img.shields.io/badge/lastest-2023--03--03-success)
 
-<details>
+<br/>
+<details id="table-content" open>
     <summary>Table des Contenus</summary>
     <ul>
         <li><a href="#intelligence-artificielle-ia">Intelligence artificielle (IA)</a> </li>
@@ -10,6 +11,7 @@
     </ul>
 
 </details>
+<br/>
 
 ### Intelligence artificielle (IA)
 L'intelligence artificielle (IA) est un processus d'imitation de l'intelligence humaine qui repose sur la création et l'application d'algorithmes exécutés dans un environnement informatique dynamique. Son but est de permettre à des ordinateurs de penser et d'agir comme des êtres humains. le but est de permettre à une machine de faire des tâches que l'homme accomplit en utilisant son intelligence. Ainsi, une machine
@@ -49,7 +51,6 @@ Les algorithmes de machines learning sont reparties en trois (3) grandes famille
 - **L’apprentissage semi-supervisé**: Les algorithmes de Machine Learning semi-supervisés se situent entre l’apprentissage supervisé et non supervisé. Ils utilisent à la fois des données étiquetées et non étiquetées pour l’apprentissage.
 
 ### Différence entre IA et machine learning
-.
 
 
 <br/>

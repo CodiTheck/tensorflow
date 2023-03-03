@@ -1,5 +1,5 @@
 # TensorFlow
-![](https://img.shields.io/badge/version-2.9.1-orange)
+![](https://img.shields.io/badge/tensorflow-2.11.0-orange)
 ![](https://img.shields.io/badge/lastest-2023--02--28-success)
 ![](https://img.shields.io/badge/contact-dr.mokira%40gmail.com-blueviolet)
 
@@ -9,7 +9,7 @@ Créé par l’équipe **Google Brain** en *2011*, sous la forme d’un système
 
 <br/>
 
-<details id="table-content">
+<details id="table-content" open>
     <summary>Table des Contenus</summary>
     <ul>
         <li><a href="#avant-propos">Avant propos</a> </li>
@@ -21,21 +21,21 @@ Créé par l’équipe **Google Brain** en *2011*, sous la forme d’un système
 <br/>
 
 
-## <a href="#table-content">Avant propos</a>
+## Avant propos
 TensorFlow est une bibliothèque Open Source de **deep learning** créée par Google et compatible avec le langage **Python**. Il s’agit d’une boîte à outils permettant de standardiser et de simplifier la création et le déploiement de modèles de deep learning.<br/>
 
 TensorFlow a été conçu par des ingénieurs de Google en 2015 afin de mener à bien des projets de recherche en machine learning ainsi que sur le sujet de deep learning. Fruit d’une longue expérience préalable, il a été conçu pour mettre en production le fruit des équipes de recherches sur différents matériels, y compris ceux ayant peu de ressources (montres connectées, électronique embarquée, etc.). Cet outil est adéquat pour une large gamme d’applications. En particulier, TensorFlow permet d’entraîner au mieux des modèles nécessitant de grandes banques de données. <br/>
 
 TensorFlow peut être vu comme un système de programmation dans lequel les calculs sont représentés sous la forme d’un graphe. Les sommets représentent des opérations mathématiques qui peuvent aller d’une simple addition à des fonctions très complexes, et les arêtes représentent des structures spécifiques qu’on appelle tensors.
 
-## <a href="#table-content">Pourquoi utiliser TensorFlow ?</a>
+## Pourquoi utiliser TensorFlow ?
 Au lieu de s'occuper de l'implémentation des algorithmes dans les moindres détails ou de chercher des solutions appropriées pour lier une fonction en sortie avec une autre fonction en entrée, le développeur peut se concentrer sur la logique globale de l'application, TensorFlow s'occupant des détails en coulisses. Il propose différents niveaux d’APIs, cela permet donc de le rendre facilement accessible à des développeurs ayant très peu de connaissances en deep learning, tout en conservant un intérêt indéniable pour des chercheurs.<br/>
 
 La mise en production des modèles d’IA est une tâche qui se rend parfois difficile, qui permet la création et la maximisation de la valeur ajoutée pour les entreprises. De plus, cette tâche ne s’arrête pas une fois que le modèle est passé en production, car il est essentiel de le maintenir, l’évaluer et le réentrainer de temps en temps. Cela peut être justifié par le fait que les données vont continuer à augmenter en véhiculant de nouvelles informations plus précises et plus riches. Toutes ces étapes doivent être automatisées, afin de limiter au maximum l’intervention humaine. Les applications TensorFlow peuvent être exécutées sur une machine locale, un cluster sur le Cloud, des smartphones et tablettes iOS ou Android, ou encore des CPU et des GPU. Sur son propre Cloud, Google propose d’exécuter TensorFlow sur ses puces **TensorFlow Processing Unit (TPU)** pour profiter d’une accélération accrue. Les modèles créés par TensorFlow peuvent ensuite être déployés sur n’importe quel appareil afin de délivrer des prédictions.<br/>
 
 TensorFlow possède un très bon outil de visualisation qui s’appelle TensorBoard. Cet outil permet de visualiser les données, l’évolution des variables et les graphes de calcul. Il s’agit d’un outil bien conçu et facile à utiliser, à tel point que les développeurs de PyTorch, le principal concurrent de TensorFlow aujourd’hui, ont développé un module spécifique permettant d’intégrer, même partiellement, TensorBoard dans l’écosystème PyTorch.
 
-## <a href="#table-content">Prérequis</a>
+## Prérequis
 1. Avoir quelque notion de base en mathématique.
 2. Savoir écrire des algorithmes et programmer dans un langage de programmation.
 3. Savoir programmer en langage **Python**.

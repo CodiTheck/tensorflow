@@ -1,5 +1,5 @@
 ## Algorithmes d'apprentissage fondamentaux
-![](https://img.shields.io/badge/lastest-2023--03--06-success)
+![](https://img.shields.io/badge/lastest-2023--03--07-success)
 ![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
 Ces algorithmes ne sont pas spécifiques à TensorFlow, mais on va les mettres en œuvre avec les outils de TensorFlow. Avant de passer à des choses comme les réseaux neuronaux et des techniques d'apprentissage automatique plus avancées, tu dois vraiment comprendre comment ils fonctionnent parce qu'ils sont utilisés dans beaucoup de techniques différentes et combinés ensemble. et l'un d'entre eux est en fait très puissant si vous l'utilisez de la bonne façon. Une grande partie des implémentations des algorithmes d'apprentissage automatique, utilisent en fait des modèles assez basiques. Parce que ces modèles sont capables de faire des choses très puissantes. Ne t'inquiette pas, on a pas affaire à quelque chose de follement compliqué.<br/>
@@ -25,6 +25,8 @@ Il existe de nombreux outils au sein de TensorFlow qui pourraient être utilisé
                     <ul>
                         <li><a href="#récupération-des-données">Récupération des données</a></li>
                         <li><a href="#exploration-des-données">Exploration des données</a></li>
+                        <li><a href="#Différence-entre-données-d-entrainement-et-données-de-teste">Différence entre données d'entrainement et données de teste</a></li>
+                        <li><a href="#colonnes-des-caractéristiques">Colonnes des caractéristiques</a></li>
                     </ul>
                 </li>
             </ul>
@@ -331,6 +333,115 @@ Après avoir analysé toutes ces informations, on note ce qui suit:
 - La majorité des passagers qui ont survécues sont des femme.
 - La majorité des passagers qui ont survécues on voyagé seul.
 - La majorité des passagers qui ont survécues font partie de la première classe (classe supérieur).
+
+##### Différence entre données d'entrainement et données de teste
+Tu as remarqué que nous avons chargé deux ensembles de données différents ci-dessus. En effet, lorsque nous voulons entraîner des modèles, nous avons besoin de deux ensembles de données : l'ensemble des données d'**entraînement** et celui de **teste**.
+
+Les données d'entraînement sont celles qu'on transmet au modèle pour qu'il puisse se développer et apprendre. Elles sont généralement beaucoup plus volumineuses que les données de test.
+
+Les données de test sont celles qu'on utilise pour évaluer le modèle et voir s'il fonctionne bien. Il faut toujours utiliser un ensemble de données sur lequel le modèle n'a pas été entraîné pour l'évaluer.
+
+> Explique moi pourquoi ?
+
+L'objectif est de pouvoir faire des prédictions sur de **NOUVELLES** données avec notre modèle, des données que nous n'avons jamais vues auparavant. Si on teste simplement le modèle sur les données qu'il a déjà vues, on ne pourra pas mesurer sa précision avec exactitude. On ne peut pas être sûrs qu'il n'a pas simplement mémorisé nos données d'apprentissage. C'est pourquoi on sépare nos données de test et d'apprentissage.
+
+
+##### Colonnes des caractéristiques
+
+```
+     survived     sex   age  n_siblings_spouses  parch     fare   class     deck  embark_town alone
+0           0    male  22.0                   1      0   7.2500   Third  unknown  Southampton     n
+1           1  female  38.0                   1      0  71.2833   First        C    Cherbourg     n
+2           1  female  26.0                   0      0   7.9250   Third  unknown  Southampton     y
+3           1  female  35.0                   1      0  53.1000   First        C  Southampton     n
+4           0    male  28.0                   0      0   8.4583   Third  unknown   Queenstown     y
+```
+
+On peut voir qu'une donnée catégorisée n'est pas une donnée numérique. Par exemple, le sexe d'un passager, le fait que passager est survécu ou pas, la classe dans laquelle le passager appartient, sont des données catégorielles. Ce sont donc des données dont les valeurs ne sont pas incrémentable. Alors les données numériques prennent des valeurs incrémentables, par exemple l'âge d'un passager, le prix (la colonne `"fare"`).
+<!--Obtenir des données catégorisées est assez courante. -->
+Les données catégorielles sont à **valeur qualitative** et les données numériques sont à **valeur quantitative**.
+
+De notre dataset, on peut énumérer des données catégorielles et des données numériques, dans le tableau ci-dessous.
+
+| Donnée catégorielles (à valeurs qualitatives) | Données numériques (à valeurs quantitatives)|
+|-----------------------------------------------|---------------------------------------------|
+| `"survived"`, `"sex"`, `"n_siblings_spouses"`, `"parch"`, `"class"` , `"deck"`, `"embark_town"`, `"alone"` | `"age"`, `"fare"`|
+
+> Maintenant, qu'est ce qu'on va faire avec les données catégorielles ?
+
+On sait au moins, d'une manière ou d'une autre, que nous devons transformer ces données en nombre. Le plus souvent, on transforme les données catégorielles en **nombre entier**. On peut par exemple représenter les données sur le sexe des passagers par des 0 et des 1; le sexe masculin (`male`) sera représenté par `0` et le sex féminin (`female`) sera représenté par `1`.
+
+> Mais, pourquoi transformer ces données en nombre ? Elles seront moins lisibles et significatives que si tu les laisses comme t-elle.
+
+Oui je te comprend. En réalité, le modèle qu'on veut entraîner est comme une équation ou formule mathématique. Et comme tu le sais, et que tu l'as toujours su, une formule mathématique nous permet de faire des calculs. Et qui dit, faire des calculs, veut dire faire des additions, soustrations, multiplications, etc avec des nombres et NON des noms. Notre modèle étant une formule mathématique, il doit donc prendre des nombres en entré pour effectuer un calcul et ensuite nous donner des nombres en sortie. En gros, on ne manipule que des nombres. C'est pour cela qu'il faut convertir `male` et `female` qui ne sont rien que des noms de catégorie ou classe, en nombres entiers qui représenterons chacun d'entre eux.
+
+> Pourquoi des nombres entiers ? Pourquoi on ne choisirait pas des nombres réels ?
+
+Très bonne question. Au fait, les données catégorielles sont des données qui prennent des valeurs discrettes et finies. C'est à dire qu'on peut compter le nombre de valeurs prises par une donnée catégorielle. Or, les nombres réels sont continus et infinis. Ce qui n'est pas le cas pour les nombres entiers. D'où, on préfère représenter les données catégorielles par des nombres entiers.
+
+Ainsi, on a:
+- pour la colonne `"sex"`: **`0`** => `male` et **`1`** => `female`.
+- pour la colonne `"class"`: **`0`** => `First`, **`1`** => `Second` et **`2`** => `Third`.
+
+Donc, on doit pouvoir encoder ces types de données ainsi avant de passer à l'étape suivante. Mais, plus besoin de le faire manuellement,
+car TensorFlow peut maintenant le faire pour nous dans sa version 2.0 en utilisant les fonctions `categorical_column_with_vocabulary_list()` sur les colonnes de données catégorielles et `numeric_column()` sur les colonnes de données numériques.
+
+Ecrivons donc le code qui va nous permetre de réaliser cette opération.
+
+```python
+# Notre modèle linéaire doit avoir toutes les différentes
+# colonnes que nous allons utiliser, il doit donc connaître
+# toutes les entrées différentes qui peuvent se trouver 
+# dans chacune de ces colonnes. Il doit également
+# savoir s'il s'agit d'une colonne catégorielle ou numérique.
+
+#:obj:`list` of :obj:`str`: Liste des noms de colonnes à valeur quantitative
+NUMERIC_COLUMNS = ['age', 'fare']
+
+#:obj:`list` of :obj:`str`: Liste des noms de colonnes à valeur qualitative
+CATEGORICAL_COLUMNS = ['sex',
+                       'n_siblings_spouses',
+                       'parch',
+                       'class',
+                       'deck',
+                       'embark_town',
+                       'alone']
+
+feature_columns = []  # Liste des colonnes
+
+# Pour chaque nom de colonne qu'on prend dans la 
+# liste des colonnes à valeur qualitative
+for column_name in CATEGORICAL_COLUMNS:
+    # On récupère les valeurs uniques qu'on considère 
+    # comme vocabulaire.
+    vocab = df_train[column_name].unique()
+
+    # Cela va créer une colonne, sous la forme d'un tableau Numpy, 
+    # qui contient le nom de la caractéristique, et tout le vocabulaire
+    # qui lui est associé.
+    categorical_column = tf.feature_column\
+            .categorical_column_with_vocabulary_list(column_name, vocab)
+
+    feature_columns.append(categorical_column)
+
+# Pour chaque nom de colonne qu'on prend dans la 
+# liste des colonnes à valeur quantitative
+for column_name in NUMERIC_COLUMNS:
+    numerical_column = tf.feature_column.numeric_column(column_name,
+                                                        dtype=tf.float32)
+    feature_columns.append(numerical_column)
+
+# on affiche le contenu de notre liste `feature_columns`.
+print(feature_columns)
+
+```
+
+Ce qui produit le résultat suivant:
+
+```
+[VocabularyListCategoricalColumn(key='sex', vocabulary_list=('male', 'female'), dtype=tf.string, default_value=-1, num_oov_buckets=0), VocabularyListCategoricalColumn(key='n_siblings_spouses', vocabulary_list=(1, 0, 3, 4, 2, 5, 8), dtype=tf.int64, default_value=-1, num_oov_buckets=0), VocabularyListCategoricalColumn(key='parch', vocabulary_list=(0, 1, 2, 5, 3, 4), dtype=tf.int64, default_value=-1, num_oov_buckets=0), VocabularyListCategoricalColumn(key='class', vocabulary_list=('Third', 'First', 'Second'), dtype=tf.string, default_value=-1, num_oov_buckets=0), VocabularyListCategoricalColumn(key='deck', vocabulary_list=('unknown', 'C', 'G', 'A', 'B', 'D', 'F', 'E'), dtype=tf.string, default_value=-1, num_oov_buckets=0), VocabularyListCategoricalColumn(key='embark_town', vocabulary_list=('Southampton', 'Cherbourg', 'Queenstown', 'unknown'), dtype=tf.string, default_value=-1, num_oov_buckets=0), VocabularyListCategoricalColumn(key='alone', vocabulary_list=('n', 'y'), dtype=tf.string, default_value=-1, num_oov_buckets=0), NumericColumn(key='age', shape=(1,), default_value=None, dtype=tf.float32, normalizer_fn=None), NumericColumn(key='fare', shape=(1,), default_value=None, dtype=tf.float32, normalizer_fn=None)]
+```
+
 
 ### Classification
 Essentiellement, la classification consiste à différencier les points de données et à les séparer en classes. Plutôt que de prédire une valeur numérique, comme cela se fait avec la régression linéaire, on prédit des classes. Donc, il s'agira en réalité de prédire la probabilité qu'un point spécifique de l'ensemble de données appartienne à chacune de toutes les classes.<br/>

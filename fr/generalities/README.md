@@ -134,18 +134,29 @@ les programmeurs n'ont plus besoin de connaître toutes les règles à observer
 dans l'exécution d'une tâche intellectuelle avant de créer un programme
 d'intelligence artificielle.
 
+Maintenant, il est temps de parler des réseaux de neurones ou l'apprentissage
+en profond (deep learning en anglais). Un réseaux de neurones dit artificiel
+est un type de modèle d'apprentissage automatique dont le fonctionnement et la
+structure ressemblent à ceux des neurones biologiques.
 
+<div align="center">
+    <h6>FIGURE 04</h6>
+    <img width="50%" src="./images/neuron_network.png"/>
+</div>
+<p align="center">
+<i>
+    <ins>Figure 04</ins> : Exemple de réseau de neurones.
+</i>
+</p>
 
-<br/>
-<details id="table-content" open>
-    <summary><h3>Table des Contenus</h3></summary>
-    <ul>
-    </ul>
+Un réseau de neurones analyse les données sur plusieurs dimensions. Il est
+composé d'une couche d'entrée, d'une ou de plusieurs couches internes ou cachée
+et d'une couche de sortie. Les couches sont interconnectées par des nœuds
+encors appelés neurones, chaque couche utilise la sortie de la couche
+précédente comme entrée.
 
-</details>
-<br/>
-
-
+<!-- Les réseaux de neurones sont capables d'apprendre presque tous seuls à
+partir de données d'exemples. -->
 
 <br/>
 <br/>

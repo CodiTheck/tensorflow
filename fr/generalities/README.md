@@ -84,6 +84,57 @@ nous avons le machine learning (apprentissage automatique), le deep learning
 (l'apprentissage profond) et le reinforcement learning (l'apprentissage par
 renforcement). C'est de ces techniques nous parlerons dans ce cour.
 
+<div align="center">
+    <h6>FIGURE 03</h6>
+    <img width="50%" src="./images/ai_ml_dl.png"/>
+</div>
+<p align="center">
+<i>
+    <ins>Figure 03</ins> : Relation entre IA, apprentissage automatique
+    et apprentissage profond.
+</i>
+</p>
+
+Comme, tu le remarques sur la [**figure 3**](#figure-03), l'apprentissage
+automatique fait partie de l'intelligence artificielle. C'est donc une des
+méthodes pour écrire des programmes d'intelligence artificielle.
+
+Maintenant, qu'est quoi **apprentissage automatique** ?
+
+L'apprentissage automatique est l'ensemble des méthodes de programmation
+permettant à un ordinateurs d'apprendre, de rechercher par lui même de façon
+autonome, les rêgles à respecter pour correctement exécuter les tâches
+intellectuelles en s'améliorant au fil du temps.
+
+<div align="center">
+    <img width="50%" src="./images/x.png"/>
+</div>
+
+
+Ainsi, plutôt que de coder en dur les règles dans l'ordinateur, l'apprentissage
+automatique prendre des exemples de données et les résultats issus du traitement
+de ces données, pour déterminer les règles à observer à l'exécution de la tâche.
+Ce sont ces règles qui sont appelés **modèle**. Cette méthode nécessite
+beaucoup de données pour correctement fonctionner.
+
+Cependant, les modèles d'apprentissage automatique n'ont pas une précision
+de 100%, ce qui signifie qu'à des moments donnés, ils commettent certaines
+erreurs dans l'exécution de leur tâche.
+
+> Donc, ils n'ont pas toujours la bonne réponse à toutes
+les questions ! :grin:
+
+Donc le challenge, lorsque nous créons des modèles d'apprentissage automatique
+est d'augmenter la précision aussi haut que possible. Ce qui lui permet de
+faire moins d'erreurs.
+
+Mais pour résumer cela, l'apprentissage automatique donne la capacité au
+ordinateur de s'auto-programmer pour exécuter des tâches. Grâce à cette méthode
+les programmeurs n'ont plus besoin de connaître toutes les règles à observer
+dans l'exécution d'une tâche intellectuelle avant de créer un programme
+d'intelligence artificielle.
+
+
 
 <br/>
 <details id="table-content" open>

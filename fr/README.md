@@ -35,16 +35,6 @@ En particulier, TensorFlow permet d’entraîner au mieux des modèles nécessit
 de grandes banques de données.
 
 
-<details id="table-content" open>
-    <summary><h2>Table des Contenus</h2></summary>
-    <ul>
-        <li><a href="#avant-propos">Avant propos</a> </li>
-        <li><a href="#prérequis">Prérequis</a> </li>
-    </ul>
-
-</details>
-<br/>
-
 ## Avant propos
 La mise en production des modèles d’IA est une tâche qui se rend parfois
 difficile, elle permet la création et la maximisation de la valeur ajoutée
@@ -93,14 +83,27 @@ PyTorch.
 moins avoir suivie un cour de **machine learning** et/ou de **data science**
 ailleurs qu'ici. Car je ne vais pas trop m'attarder sur ces notions de base.
 
-Quant à moi, avant de commencer la programmation avec TensorFlow, dans une
+<!-- Quant à moi, avant de commencer la programmation avec TensorFlow, dans une
 session introductive, je vais d'abord te parler un peu des réseaux de neurones
 et de leurs expressions mathématiques. Mais, avant cela, je vais quand même
 consacrer quelques paragraphes pour te parler de l'intelligence artificielle,
 l'apprentissage automatique (Machine Learning) et de la différence qui existe
 entre ces deux notions. Pourquoi ? Et bien, parce que nous allons couvrir
 tous ces thèmes tout au long de ce cours. Il est donc vital que tu comprenne
-ce que ces trois thèmes signifient réellement.
+ce que ces trois thèmes signifient réellement. -->
+
+<details id="table-content" open>
+    <summary><h2>Table des Contenus</h2></summary>
+    <ul>
+        <li><a href="#avant-propos">Avant propos</a> </li>
+        <li><a href="#prérequis">Prérequis</a> </li>
+        <li><a href="./generalities/README.md">Généralité</a> 
+            <ul>
+            </ul>
+        </li>
+    </ul>
+
+</details>
 
 
 

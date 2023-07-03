@@ -1,77 +1,106 @@
 ## Généralités
-![](https://img.shields.io/badge/lastest-2023--03--03-success)
+![](https://img.shields.io/badge/lastest-2023--07--03-success)
+![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
+
+Tout d'abord, on va parler un peu de la différence entre
+l'intelligence artificielle (IA), les neurones réseaux et apprentissage
+automatique.
+Beaucoup de gens ont du mal à comprendre réellement ce que l'intelligence
+artificielle signifie. 
+
+Née de différentes questions comme : 
+- Les ordinateurs peuvent-ils penser ?
+- Pouvons-nous les amener à comprendre les choses ?
+- Pouvons-nous faire en sorte qu'un ordinateur pense et qu'il
+fasse son propre truc ?
+
+Ce sont donc un peu les questions que les scientifiques et les chercheurs se
+sont posées à l'époque. Et c'est à ce moment là que le terme
+**intelligence artificielle** a vu le jour. À l'époque, l'IA était simplement
+un ensemble de règles prédéfinies. Donc, si tu penses qu'il y avait une
+intelligence artificielle derrière les jeux tic tac toe, ou le jeux d'échecs,
+alors tu as tout faux. :hand_over_mouth:
+
+<div align="center">
+    <h6>FIGURE 01</h6>
+    <img width="30%" src="./images/tik_tak_toe.png"/>
+    <img width="40%" src="./images/chess_game.png"/>
+</div>
+<p align="center">
+<i>
+    <ins>Figure 01</ins> : Le jeux de tic tac toe à gauche et le jeux d'échec
+    à droite.
+</i>
+</p>
+
+Ces jeux étaient programmés, à l'époque en utilisant
+des règles prédéfinies que les humains avaient inventés et tapés dans
+l'ordinateur
+sous forme de code. C'étaient donc de simples programmes informatiques que
+les ordinateurs
+exécutaient tout simplement. Il n'y avait donc pas d'algorithmes
+d'apprentissage 
+automatique ou de deep learning, etc, c'était simplement du code. Donc en ce
+moment, une très bonne IA était simplement un très bon ensemble de règles où
+une tonne de règles différentes qui couvraient tous les cas possible que les
+humains avaient mises en œuvre dans un langage de programmation, qui marchait
+très bien. Ces programmes d'IA pouvaient atteindre au moins un demi-million de
+lignes de codes, car ils comportaient des tonnes et des tonnes de règles
+différentes. 
+
+Donc, ce que je voudrais que tu comprennes est que si tu essais de simuler
+une tâche intellectuelle dans un ordinateur, 
+comme jouer à un jeu, ce qu'un humain ferait, alors cela pourrait être considéré
+comme de l'IA. Pour mieux t'expliquer, on va prendre l'exemple de notre célèbre
+jeux **Pacman**.
+
+<div align="center">
+    <h6>FIGURE 02</h6>
+    <img width="30%" src="./images/pacman.gif"/>
+</div>
+<p align="center">
+<i>
+    <ins>Figure 02</ins> : Le jeux de Pacman
+</i>
+</p>
+
+Dans ce jeux, nous avons nos petits fantômes contrôlés par l'ordinateur et qui
+se baladent un peut partout
+à la recherche de notre "gas", ici Pacman qui est contrôlé par le joueur.
+Tout simplement, le programme pour contrôler chaque fantôme pourrait utiliser
+un simple algorithme de recherche de chemin le plus court comme par exemple
+l'agorithme de *Dijkstra*. Ce dernier, n'a rien avoir avec le machine learning
+encors moins le deep learning, ou... et pourtant les petits fantômes contrôlés
+par cet algorithme ont toujours été considérés comme des IA. :blush:
+
+> En théorie des graphes, l'**algorithme de Dijkstra**  permet de déterminer
+le plus court chemin entre deux sommets dans un graphe connexe pondéré.
+
+Par conséquent, on parle d'intelligence artificielle lorsque l'ordinateur
+simule certains comportement humain intellectuel.
+
+De nos jours, l'IA est devenue un domaine beaucoup plus complexe dans lequel
+nous avons le machine learning (apprentissage automatique), le deep learning
+(l'apprentissage profond) et le reinforcement learning (l'apprentissage par
+renforcement). C'est de ces techniques nous parlerons dans ce cour.
+
 
 <br/>
 <details id="table-content" open>
-    <summary>Table des Contenus</summary>
+    <summary><h3>Table des Contenus</h3></summary>
     <ul>
-        <li><a href="#intelligence-artificielle-ia">Intelligence artificielle (IA)</a> </li>
-        <li><a href="#le-machine-learning">Le machine learning</a> </li>
-        <li><a href="#différence-entre-ia-et-machine-learning">Différence entre IA et machine learning</a> </li>
     </ul>
 
 </details>
 <br/>
 
-### Intelligence artificielle (IA)
-L'intelligence artificielle (IA) est un processus d'imitation de l'intelligence humaine qui repose sur la création et l'application d'algorithmes exécutés dans un environnement informatique dynamique. Son but est de permettre à des ordinateurs de penser et d'agir comme des êtres humains. le but est de permettre à une machine de faire des tâches que l'homme accomplit en utilisant son intelligence. Ainsi, une machine sera considérée comme intelligente si elle arrive a reproduit le comportement d'un être humain dans
-un domaine spécifique ou non. <br/>
-
-Les domaines d’application et usages potentiels d’une Intelligence Artificielle sont de plus en plus divers :
-- traduction automatique,
-- reconnaissance d’image,
-- reconnaissance faciale,
-- assistants vocaux,
-- chatbots,
-- véhicules autonomes,
-- agriculture, 
-- secteur bancaire, 
-- optimisation de la prospection commerciale,
-- maintenance prédictive,
-- aide médicale au diagnostic,
-- Facility Management et smart building,
-- amélioration des processus de recrutement,
-- réduction des consommations d’énergie,
-
-bref... L’intelligence artificielle est une science qui bouleverse tous les secteurs dans tous les domaines. <br/>
-
-L'Intelligence Artificielle (IA) telle que nous la connaissons est une Intelligence Artificielle faible, par opposition à l'IA forte, qui n'existe pas encore. Aujourd'hui, les machines sont capables de reproduire un comportement humain, mais sans conscience. Plus tard, leurs capacités pourraient croître au point de se transformer en machines dotées de conscience, de sensibilité et d'esprit. Le processus cognitif auquel l’intelligence artificielle aspire a été séparé en différentes compétences qui sont:
-
-- La compréhension ;
-- La communication ;
-- La mémorisation ;
-- Le raisonnement ;
-- L’adaptation ;
-- L’apprentissage automatique (Machine learning).
-
-### Le machine learning
-Alors que l’intelligence artificielle tente d’imiter le raisonnement humain, le machine learning va plus loin. C’est cette branche de l’intelligence artificielle qui permet aux machines d’apprendre par elles-mêmes, sans dépendre de commandes. <br/>
-
-En réalité, le machine learning est un ensemble d'algorithmes qui permettent de parcourir en effectuant des calculs sur une grande quantité de données ingérable pour un être humain, afin d’identifier des modèles. Donc, au lieu d’écrire du code, on envoie des données dans un algorithme générique (fonction mathématique), pour ce dernier puisse apprendre et construit sa logique en fonction de ces informations. En termes simples, avec le Machine Learning, les ordinateurs apprennent à se programmer eux-mêmes.<br/>
-
-Cependant, l’intervention humaine est nécessaire à l’apprentissage de la machine pour valider l'expérience emmagasinée par le programme. L’algorithme est progressivement affiné grâce à certaines corrections et règlages.
-
-Les algorithmes de machines learning sont reparties en trois (3) grandes familles.
-- **L’apprentissage supervisé**: Les algorithmes de Machine Learning supervisés peuvent appliquer ce qui a été appris dans le passé à de nouvelles données en utilisant des exemples étiquetés pour prédire des événements futurs. Cette méthodologie d’apprentissage permet la construction d’une fonction de prédiction à partir d’exemples.
-- **L’apprentissage non supervisé**: Ses algorithmes apprennent à partir de données d’essai qui n’ont pas été étiquetées, classées ou catégorisées. Cette approche permet de trouver une structure dans les données, comme le regroupement ou le clustering.
-- **L’apprentissage semi-supervisé**: Les algorithmes de Machine Learning semi-supervisés se situent entre l’apprentissage supervisé et non supervisé. Ils utilisent à la fois des données étiquetées et non étiquetées pour l’apprentissage.
-
-### Différence entre IA et machine learning
-L’intelligence artificielle et le machine learning sont deux concepts visant à améliorer les compétences d’un système informatique. L'objectif principal de l'Intelligence Artificielle est d'apporter l'intelligence humaine aux machines or que le Machine Learning est un sous-ensemble de l'IA qui permet aux ordinateurs d'apprendre de façon autonome à exécuter des tâches en s'améliorant au fil du temps.
 
 
 <br/>
 <br/>
+<div align="center">
 
-
-- Je passe à la session **suivante**: [Installation et configuration](../installation/README.md)
-- [<--](../README.md) Je reviens à la session **précédente**: [TensorFlow](../README.md)
-
-
-<!--
-<div style="width: 100%; display: flex; justify-content: center;  column-gap: 20px;">
-    <div style="border: 1px solid; padding: 1em;"><a href="../README.md"><< TensorFlow</a></div>
-    <div style="border: 1px solid; padding: 1em;"><a href="../installation/README.md">Algorithmes d'apprentissage fondamentaux >></a></div>
+[:arrow_backward: Accueil](../README.md)
+| [**Installation et configuration :arrow_forward:**](../installation/README.md)
 
 </div>
--->

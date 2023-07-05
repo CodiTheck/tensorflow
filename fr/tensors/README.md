@@ -77,7 +77,7 @@ nombres.
         <li><a href="#dimensions-des-tenseurs">Dimensions des tenseurs</a></li>
         <li><a href="">Redimensionnement d'un tenseur</a></li>
         <li><a href="">Types de tenseurs</a></li>
-        <li><a href="">Evaluation des tenseurs</a></li>
+        <!-- <li><a href="">Evaluation des tenseurs</a></li> -->
     </ul>
 </details>
 <br/>
@@ -144,8 +144,7 @@ rank = tf.rank(rank2_tensor)
 print(f"Rank of rank2_tensor is: {rank}")
 
 ```
-
-<!--TODO: execution of the below code. -->
+![](./images/rank_output.png)
 
 Nous avons assez parlé du rang des tenseurs, il est temps de parler
 de leur forme.
@@ -159,19 +158,19 @@ tenseur mais parfois elles peuvent être inconnues.
 
 Pour obtenir les dimensions d'un tenseur, on utilise l'attribut `shape`.
 
+###### `</> python {code:03:01}`
 ```python
 print(rank2_tensor.shape)
 # Affiche un tuple d'entiers qui représente
 # la forme du tenseur `rank2_tensor`.
 
 ```
-<!--TODO: execution of the below code. -->
+![](./images/shape_output.png)
 
 Il s'agit ici d'un attribut très important pour le développement des algorithmes
 de machine learning. Car, lorsqu'on se trompe de dimension pendant les calculs,
 le programme nous retourne des bugs, donc ne fonctionne plus.
 
-<!--TODO: explain something here about the shape. -->
 À la création d'un tenseur, par exemple si on a plusieurs lignes de données,
 toute les lignes doivent **avoir obligatoirement le même nombre d'éléments**.
 Donc, si tu veux créer une matrice de nombres réels de dimension $3 \times 5$
@@ -185,19 +184,22 @@ d'un tenseur sans modifier ses valeurs.
 
 Le nombre d'éléments d'un tenseur est le produit des valeurs $x_1, x_2, \ldots, 
 x_i, \ldots, x_n$, de toutes ses dimensions `(x1, x2, ..., xi, ..., xn)`.
-Etant donnée que deux tenseurs de dimensions différentes peuvent contenir le
+Étant donnée que deux tenseurs de dimensions différentes peuvent contenir le
 même nombre d'éléments, alors il est possible de changer les dimensions d'un
 tenseur. Ce pendant, lorsqu'on modifie les dimensions d'un tenseur, cela
 affecte son rang.
 
 L'exemple ci-dessous montre comment changer les dimensions d'un tenseur.
 
+###### `</> python {code:04:01}`
 ```python
 tensor1 = tf.ones([1, 2, 3])  # Crée un tenseur de dimensions (1, 2, 3) remplit de 1.
 tensor2 = tf.reshape(tensor1, [2, 3, 1])  # Redimensionne le tenseur existant en (2, 3, 1).
-tensor3 = tf.reshape(tensor2, [3, -1])  # -1 indique au tenseur de calculer 
-                                        # la taille de la dimension à cet endroit. 
-                                        # Ce qui donnera au tenseur la forme [3, 3].
+
+tensor3 = tf.reshape(tensor2, [3, -1])  
+# -1 indique au tenseur de calculer 
+# la taille de la dimension restante à cet endroit. 
+# Ce qui donnera au tenseur la forme [3, 3].
 
 # Le nombre d'éléments dans le tenseur redimensionné DOIT correspondre 
 # au nombre d'éléments dans le tenseur d'origine.
@@ -206,6 +208,7 @@ tensor3 = tf.reshape(tensor2, [3, -1])  # -1 indique au tenseur de calculer
 
 Maintenant, jetons un coup d'oeil à nos différents tenseurs.
 
+###### `</> python {code:04:02}`
 ```python
 print(f"{tensor1 = }\n")
 print(f"{tensor2 = }\n")
@@ -214,80 +217,116 @@ print(f"{tensor3 = }\n")
 # Remarque les changements de dimension.
 
 ```
+![](./images/reshape_output.png)
 
-Ce qui produit le résultat suivant:
+Lorsqu'on place `-1` au niveau d'une des dimensions, la fonction de
+redimensionnement se base sur le nombre d'éléments restant afin
+de définir la valeur de cette dimension. C'est donc ce qui s'est passé pour
+avoir le `tenseur3`. Étant donné qu'il y avait au total
+$2 \times 3 \times 1 = 6$ éléments, alors lorsque le nombre de lignes a été
+définis à 3, `reshape()` a simplement effectué l'opération $6 \div 3 = 2$ pour
+connaitre le nombre d'éléments à placer sur chaque ligne pour obtenir le même
+nombre d'éléments sur les 3 lignes.
 
-```
-tensor1 = <tf.Tensor: shape=(1, 2, 3), dtype=float32, numpy=
-array([[[1., 1., 1.],
-        [1., 1., 1.]]], dtype=float32)>
+Donc, pour te dire de faire attention lorsque tu veux fixer les paramètres de
+redimensionnement, car si, par exemple on avait pris 4 comme nombre de lignes
+et ensuite placé -1 comme nombre de colonne, il y aurait eu un problème et
+la fonction `reshape()` allait nous balancer une belle erreur de type 
+`InvalidArgumentError` en pleine face. :laughing:
 
-tensor2 = <tf.Tensor: shape=(2, 3, 1), dtype=float32, numpy=
-array([[[1.],
-        [1.],
-        [1.]],
+<div align="center">
+    <h6>FIGURE 02</h6>
+    <img width="80%" src="./images/reshape_error.png"/>
+</div>
+<p align="center">
+<i>
+    <ins>Figure 02</ins> : Écran d'erreur qu'on obtient lorsqu'on essaie de
+    redimensionner tensor2 qui contient <strong>6</strong> éléments avec le paramètre de
+    redimensionnement <strong>(4, -1)</strong>.
+</i>
+</p>
 
-       [[1.],
-        [1.],
-        [1.]]], dtype=float32)>
+> Ah, informe moi. :nerd_face:
 
-tensor3 = <tf.Tensor: shape=(3, 2), dtype=float32, numpy=
-array([[1., 1.],
-       [1., 1.],
-       [1., 1.]], dtype=float32)>
+Au fait, si tu regardes le nombre d'éléments total qui est 6, il n'est pas
+divisible par 4, car $6 \div 4$ ne donne pas un nombre entier. Or pour avoir
+un nombre d'éléments répartis de façon équitable sur toutes les 4 lignes, il
+va faloir trouver 2 éléments de plus à ajouter au 6 éléments de départ.
+Ce qui n'est pas possible à trouver, étant donné que le nombre d'éléments dans
+un tenseur est fixe.
 
-```
-
-
-
-
-
+C'est tout ce qu'il faut savoir à propos de cette fonctionnalité. Il faut
+savoir qu'elle fait partie de l'une des fonctionnalités les plus utilisées
+en machine learning. On l'utilisera donc au fur et à mesure qu'on avancera dans
+ce cour.
 
 
 ### Types de tenseurs
-Avant d'aller loin, je te présente les différents types tenseur les plus
-couramment utilisés.
+Il existe différents types de tenseurs que nous pouvons utiliser. Jusqu'à
+présent, le seul qu'on a vu est `tf.Variable`.
+Avant d'aller loin, je te présente rapidement les autres types de tenseur
+les plus couramment utilisés en TensorFlow.
 
 - `tf.Variable`;
 - `tf.Constant`;
 - `tf.Placeholder`;
 - `tf.SparseTensor`.
 
-À l'exception de `Variable`, tous ces tenseurs sont immuables, ce qui signifie
-que leur valeur ne peut pas changer pendant l'exécution. Pour l'instant,
-il suffit de comprendre que nous utilisons le tenseur `Variable` lorsque nous
-voulons potentiellement changer la valeur de notre tenseur. On parlera beaucoup
-plus en profondeur de chacun d'eux au fur et à mesure de leur utilisation.
+À l'exception de `tf.Variable`, tous ces tenseurs sont immuables, ce qui 
+signifie qi'après leurs créations, on ne peut plus modifier les valeurs des
+éléments qu'ils contiennent pendant l'exécution.
+On utilise en général un tenseur de type `Variable` lorsque, au cour de
+l'exécution du programme, on prévoit changer les valeurs des éléments qu'il
+contient.
 
+On parlera beaucoup plus en profondeur de chacun d'eux au fur et à
+mesure de leur utilisation.
 
+<!--
 ### Evaluation des tenseurs
 Parfois, on a besoin d'évaluer un tenseur. En d'autres termes, récupérer sa
-valeur. Comme les tenseurs représentent un calcul partiellement complet,
-nous devrons parfois exécuter ce que l'on appelle une **session** pour
-évaluer le tenseur.
+valeur. Pour cela, on utilise une session. Une session permet d'exécuter des
+graphes ou des parties de graphes. Il alloue des ressources (sur une ou
+plusieurs machines) pour effectuer cela. Et comme un tenseur peut être
+considéré comme une partie de graphe, c'est pour cela qu'on utilise une session
+pour l'évaluer.
 
-Il existe de nombreuses manières différentes d'y parvenir. Mais je vais noter
-ci-dessous la manière la plus simple.
+> Euh, tu peux me rappeler un peut ce que s'est qu'un graphe ? :thinking:
 
+Bien sûr que oui ! Au fait, Un graphe définit le calcul. Il ne calcule rien,
+(donc ne sert pas à évaluer un tenseur), il ne contient aucune valeur,
+il définit tout simplement les opérations spécifiées dans le code. On parle
+souvent de graphe de calcul.
+
+###### `</> python {code:06:01}`
 ```python
 # On crée la session en utilisant le graphe par défaut:
 with tf.compat.v1.Session() as sess: 
     tensor1.eval()
 
 ```
+Il existe de nombreuses manières différentes d'y parvenir. Mais je vais noter
+ci-dessous la manière la plus simple.
 
-Ou tout simplement, faire comme ceci:
+Mais, tu peux simplement utiliser la fonction `tf.print()` pour évaluer un
+tenseur.
 
+###### `</> python {code:06:02}`
 ```python
 tf.print(tensor1)
 
 ```
+
+> Et pourquoi s'embêter à utiliser une session, alors qu'on pouvait tout
+simplement utiliser la fonction `tf.print()` ? :raised_eyebrow:
 
 Dans le code ci-dessus, nous avons évalué la variable tensorielle qui était
 stockée dans le *graphe par défaut*. Le graphe par défaut contient toutes
 les opérations qui ne sont pas spécifiées dans un autre graphe. Il est possible
 de créer nos propres graphes séparés. Mais pour l'instant, nous allons nous
 en tenir au graphe par défaut.
+
+-->
 
 
 <br/>

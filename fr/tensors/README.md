@@ -1,5 +1,5 @@
 ## Les tenseurs
-![](https://img.shields.io/badge/lastest-2023--07--04-success)
+![](https://img.shields.io/badge/lastest-2023--07--05-success)
 ![](https://img.shields.io/badge/status-en%20r%C3%A9daction%20-yellow)
 
 Voyons un peu ce que s'est qu'un tenseur. Je sais que cela semble être un nom
